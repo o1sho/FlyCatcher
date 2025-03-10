@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2id4jgm7wp0"]
+
+[ext_resource type="Texture2D" uid="uid://dtfq2kf16duih" path="res://assets/SpriteSet3.png" id="1_jaeev"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u80x2"]
+atlas = ExtResource("1_jaeev")
+region = Rect2(80, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bodal"]
+atlas = ExtResource("1_jaeev")
+region = Rect2(96, 144, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kdmts"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u80x2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bodal")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jaeev"]
+size = Vector2(10, 4)
+
+[node name="Start" type="Node2D"]
+z_index = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_kdmts")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_jaeev")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj501vgn4f7cd"]
+
+[ext_resource type="Texture2D" uid="uid://3skjo6qehlr5" path="res://assets/bg.png" id="1_anprf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anprf"]
+size = Vector2(16, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpp0m"]
+size = Vector2(224, 16)
+
+[node name="bg" type="StaticBody2D"]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_anprf")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 120)
+shape = SubResource("RectangleShape2D_anprf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(248, 120)
+shape = SubResource("RectangleShape2D_anprf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(128, 232)
+shape = SubResource("RectangleShape2D_dpp0m")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(128, 8)
+shape = SubResource("RectangleShape2D_dpp0m")
