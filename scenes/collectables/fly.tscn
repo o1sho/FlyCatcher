@@ -35,7 +35,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="fly" type="Node2D"]
+[node name="fly" type="Node2D" groups=["fly"]]
 script = ExtResource("1_jmfr8")
 
 [node name="Area2D" type="Area2D" parent="."]
