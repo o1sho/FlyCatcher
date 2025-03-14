@@ -11,7 +11,6 @@ config_version=5
 [application]
 
 config/name="FlyCatcher"
-run/main_scene="uid://brhw1pneaa0ne"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -22,6 +21,15 @@ window/size/viewport_height=240
 window/size/window_width_override=1024
 window/size/window_height_override=960
 window/stretch/mode="canvas_items"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "red",
+"res://scenes/": "yellow",
+"res://scenes/levels/": "orange",
+"res://scripts/": "teal"
+}
 
 [global_group]
 

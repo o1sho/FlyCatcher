@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b60xvlwfy2gh5"]
+
+[ext_resource type="Script" uid="uid://16n3fhilajhr" path="res://scenes/damageObjects/spikes.gd" id="1_bfu7m"]
+[ext_resource type="Texture2D" uid="uid://dtfq2kf16duih" path="res://assets/SpriteSet3.png" id="2_f1epc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1xsj"]
+atlas = ExtResource("2_f1epc")
+region = Rect2(0, 143.858, 15.6969, 16.1417)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_db7ux"]
+size = Vector2(13, 3)
+
+[node name="Spikes" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_bfu7m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = SubResource("AtlasTexture_m1xsj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_db7ux")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
