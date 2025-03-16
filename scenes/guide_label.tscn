@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://btf1p7jd35t1i"]
+
+[ext_resource type="FontFile" uid="uid://cpgd2c3h1j7je" path="res://assets/ui/zx_palm.ttf" id="1_my70e"]
+[ext_resource type="Script" uid="uid://cun81p87ciugq" path="res://scenes/guide_label.gd" id="1_nftq6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nftq6"]
+line_spacing = 6.0
+font = ExtResource("1_my70e")
+font_size = 8
+font_color = Color(0.960784, 0.909804, 0.819608, 1)
+
+[node name="GuideLabel" type="CanvasLayer"]
+layer = -1
+script = ExtResource("1_nftq6")
+
+[node name="Label" type="Label" parent="."]
+z_index = -1
+offset_left = 28.0
+offset_top = 110.0
+offset_right = 228.0
+offset_bottom = 130.0
+size_flags_horizontal = 4
+text = "SPACE - jump
+<- / -> or A/D - move"
+label_settings = SubResource("LabelSettings_nftq6")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+z_index = -1
+offset_left = 28.0
+offset_top = 117.0
+offset_right = 228.0
+offset_bottom = 137.0
+size_flags_horizontal = 4
+text = "RETURN TO THE NEST"
+label_settings = SubResource("LabelSettings_nftq6")
+horizontal_alignment = 1

@@ -1,13 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2id4jgm7wp0"]
+[gd_scene load_steps=7 format=3 uid="uid://c2id4jgm7wp0"]
 
-[ext_resource type="Texture2D" uid="uid://dtfq2kf16duih" path="res://assets/SpriteSet3.png" id="1_jaeev"]
+[ext_resource type="Script" uid="uid://nswryggjh4ek" path="res://scenes/start.gd" id="1_4vnla"]
+[ext_resource type="Texture2D" uid="uid://dtfq2kf16duih" path="res://assets/SpriteSet3.png" id="2_2hclh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u80x2"]
-atlas = ExtResource("1_jaeev")
+atlas = ExtResource("2_2hclh")
 region = Rect2(80, 144, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bodal"]
-atlas = ExtResource("1_jaeev")
+atlas = ExtResource("2_2hclh")
 region = Rect2(96, 144, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kdmts"]
@@ -27,8 +28,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jaeev"]
 size = Vector2(10, 4)
 
-[node name="Start" type="Node2D"]
-z_index = 1
+[node name="StartNest" type="Node2D"]
+z_index = 3
+script = ExtResource("1_4vnla")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
@@ -36,7 +38,11 @@ sprite_frames = SubResource("SpriteFrames_kdmts")
 autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_jaeev")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

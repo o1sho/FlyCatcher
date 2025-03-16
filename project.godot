@@ -35,6 +35,7 @@ folder_colors={
 
 fly=""
 game_manager=""
+borders=""
 
 [input]
 
@@ -59,12 +60,13 @@ ui_right={
 
 2d_physics/layer_1="Ground"
 2d_physics/layer_2="Player"
+2d_physics/layer_3="Start"
 2d_physics/size/window_height_override=0
 2d_physics/size/window_width_override=0
 
 [physics]
 
-2d/default_gravity=350.0
+2d/default_gravity=270.0
 
 [rendering]
 

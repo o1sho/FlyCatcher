@@ -7,21 +7,23 @@ extends CharacterBody2D
 @export var rotation_speed = 20
 
 @onready var start_point: Node2D = $"../StartPoint"
+@onready var start_nest: Node2D = $"../StartNest"
 
-
-var block_input: bool = true
+var block_input_start: bool = true
+var block_input_end: bool = false
 
 func _ready() -> void:
+	start_nest.player_in_nest.connect(disable_input)
 	revival()
 
 func _physics_process(delta: float) -> void:
-	if block_input:
+	if block_input_start && !block_input_end:
 		var direction := Input.get_axis("ui_left", "ui_right")
 		if direction:
 			update_rotation(delta, direction)
 		
 		if Input.is_action_just_pressed("ui_accept"):
-			block_input = false
+			block_input_start = false
 			velocity.y = fly_velocity
 			animated_sprite_2d.play("fly")
 		return
@@ -31,20 +33,21 @@ func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
+	if !block_input_start and !block_input_end:
+		if Input.is_action_just_pressed("ui_accept"):
+			velocity.y = fly_velocity
+			animated_sprite_2d.play("fly")
 
-	if Input.is_action_just_pressed("ui_accept"):
-		velocity.y = fly_velocity
-		animated_sprite_2d.play("fly")
+		var direction := Input.get_axis("ui_left", "ui_right")
+		if direction:
+			velocity.x = direction * speed
+		else:
+			velocity.x = move_toward(velocity.x, 0, speed)
 
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-
-	update_rotation(delta, direction)
-	move_and_slide()
-	
+		update_rotation(delta, direction)
+		move_and_slide()
+		
 func update_rotation(delta, direction: float):
 	var target_rotation = 0.0
 
@@ -57,4 +60,7 @@ func update_rotation(delta, direction: float):
 	
 func revival() -> void:
 	global_position = start_point.global_position
-	block_input = true
+	block_input_start = true
+
+func disable_input() -> void:
+	block_input_end = true
