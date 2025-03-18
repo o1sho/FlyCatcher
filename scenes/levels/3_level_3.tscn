@@ -1,14 +1,15 @@
-[gd_scene load_steps=12 format=4 uid="uid://daeqtlrvj5ttf"]
+[gd_scene load_steps=13 format=4 uid="uid://daeqtlrvj5ttf"]
 
 [ext_resource type="Script" uid="uid://csqknlibjuf4p" path="res://scenes/levels/level.gd" id="1_gc6ad"]
 [ext_resource type="PackedScene" uid="uid://bj501vgn4f7cd" path="res://scenes/background.tscn" id="2_i0lqj"]
+[ext_resource type="PackedScene" uid="uid://cms2ynhdq4ctc" path="res://scenes/levels/4_level_4.tscn" id="2_qt1fq"]
 [ext_resource type="Texture2D" uid="uid://dtfq2kf16duih" path="res://assets/SpriteSet3.png" id="3_k2xq6"]
 [ext_resource type="PackedScene" uid="uid://b60xvlwfy2gh5" path="res://scenes/damageObjects/spikes.tscn" id="4_qt1fq"]
 [ext_resource type="PackedScene" uid="uid://deme6ifh760b7" path="res://scenes/player/player.tscn" id="5_77dlj"]
 [ext_resource type="PackedScene" uid="uid://7xc656hsrc8v" path="res://scenes/collectables/fly.tscn" id="6_o7v6i"]
 [ext_resource type="PackedScene" uid="uid://wsqgg7xhy1pq" path="res://scenes/game_manager.tscn" id="7_s30xl"]
-[ext_resource type="PackedScene" uid="uid://82tmrt00f33e" path="res://scenes/damageObjects/moving_spikes.tscn" id="8_gc6ad"]
 [ext_resource type="PackedScene" uid="uid://c2id4jgm7wp0" path="res://scenes/start_nest.tscn" id="8_u8npm"]
+[ext_resource type="PackedScene" uid="uid://2tlaiaqiom66" path="res://scenes/damageObjects/rotating_spikes.tscn" id="10_k2xq6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsp8v"]
 texture = ExtResource("3_k2xq6")
@@ -317,6 +318,7 @@ sources/2 = SubResource("TileSetAtlasSource_qsp8v")
 
 [node name="Level_2" type="Node2D"]
 script = ExtResource("1_gc6ad")
+next_level_instance = ExtResource("2_qt1fq")
 
 [node name="bg" parent="." instance=ExtResource("2_i0lqj")]
 
@@ -345,60 +347,62 @@ position = Vector2(48, 190)
 [node name="StartNest" parent="." instance=ExtResource("8_u8npm")]
 position = Vector2(192, 160)
 
-[node name="MovingSpikes" parent="." instance=ExtResource("8_gc6ad")]
-position = Vector2(128, 72)
-point_a = Vector2(30, 72)
-point_b = Vector2(178, 72)
-speed = 150.0
-rotation_speed = 1000.0
+[node name="Spikes" type="Node" parent="."]
 
-[node name="Spikes" parent="." instance=ExtResource("4_qt1fq")]
+[node name="Spikes" parent="Spikes" instance=ExtResource("4_qt1fq")]
 position = Vector2(208, 64)
 
-[node name="Spikes11" parent="." instance=ExtResource("4_qt1fq")]
+[node name="Spikes11" parent="Spikes" instance=ExtResource("4_qt1fq")]
 position = Vector2(168, 176)
 
-[node name="Spikes13" parent="." instance=ExtResource("4_qt1fq")]
+[node name="Spikes13" parent="Spikes" instance=ExtResource("4_qt1fq")]
 position = Vector2(39, 224)
 
-[node name="Spikes14" parent="." instance=ExtResource("4_qt1fq")]
+[node name="Spikes14" parent="Spikes" instance=ExtResource("4_qt1fq")]
 position = Vector2(52, 224)
 
-[node name="Spikes16" parent="." instance=ExtResource("4_qt1fq")]
+[node name="Spikes16" parent="Spikes" instance=ExtResource("4_qt1fq")]
 position = Vector2(65, 224)
 
-[node name="Spikes15" parent="." instance=ExtResource("4_qt1fq")]
+[node name="Spikes15" parent="Spikes" instance=ExtResource("4_qt1fq")]
 position = Vector2(26, 224)
 
-[node name="Spikes12" parent="." instance=ExtResource("4_qt1fq")]
+[node name="Spikes12" parent="Spikes" instance=ExtResource("4_qt1fq")]
 position = Vector2(215, 176)
 
-[node name="Spikes2" parent="." instance=ExtResource("4_qt1fq")]
+[node name="Spikes2" parent="Spikes" instance=ExtResource("4_qt1fq")]
 position = Vector2(224, 64)
 
-[node name="Spikes3" parent="." instance=ExtResource("4_qt1fq")]
+[node name="Spikes3" parent="Spikes" instance=ExtResource("4_qt1fq")]
 position = Vector2(150, 96)
 
-[node name="Spikes4" parent="." instance=ExtResource("4_qt1fq")]
+[node name="Spikes4" parent="Spikes" instance=ExtResource("4_qt1fq")]
 position = Vector2(135, 96)
 
-[node name="Spikes5" parent="." instance=ExtResource("4_qt1fq")]
+[node name="Spikes5" parent="Spikes" instance=ExtResource("4_qt1fq")]
 position = Vector2(120, 96)
 
-[node name="Spikes6" parent="." instance=ExtResource("4_qt1fq")]
+[node name="Spikes6" parent="Spikes" instance=ExtResource("4_qt1fq")]
 position = Vector2(105, 96)
 
-[node name="Spikes7" parent="." instance=ExtResource("4_qt1fq")]
+[node name="Spikes7" parent="Spikes" instance=ExtResource("4_qt1fq")]
 position = Vector2(90, 96)
 
-[node name="Spikes8" parent="." instance=ExtResource("4_qt1fq")]
+[node name="Spikes8" parent="Spikes" instance=ExtResource("4_qt1fq")]
 position = Vector2(240, 40)
 rotation = -1.5708
 
-[node name="Spikes9" parent="." instance=ExtResource("4_qt1fq")]
+[node name="Spikes9" parent="Spikes" instance=ExtResource("4_qt1fq")]
 position = Vector2(40, 16)
-rotation = -3.14159
+rotation = 3.14159
 
-[node name="Spikes10" parent="." instance=ExtResource("4_qt1fq")]
+[node name="Spikes10" parent="Spikes" instance=ExtResource("4_qt1fq")]
 position = Vector2(208, 80)
-rotation = -3.14159
+rotation = 3.14159
+
+[node name="RotatingSpikes" parent="." instance=ExtResource("10_k2xq6")]
+position = Vector2(176, 88)
+point_a = Vector2(88, 176)
+point_b = Vector2(88, 176)
+speed = 0.0
+rotation_speed = 40.0

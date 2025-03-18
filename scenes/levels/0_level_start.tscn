@@ -344,6 +344,7 @@ position = Vector2(127, 159)
 
 [node name="StartNest" parent="." instance=ExtResource("8_wdtgj")]
 position = Vector2(128, 176)
+delay_for_finish = 3
 
 [node name="Spikes" parent="." instance=ExtResource("10_1uixc")]
 position = Vector2(32, 224)
