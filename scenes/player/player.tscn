@@ -65,8 +65,9 @@ z_index = 2
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_8afob")
-speed = 40
-fly_velocity = -110.0
+speed = 50
+fly_velocity = -140.0
+rotation_speed = 50
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
 shape = SubResource("CapsuleShape2D_gmlin")

@@ -1,6 +1,9 @@
+class_name Player
 extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var game_manager: GameManager = $"../GameManager"
+
 
 @export var speed = 60
 @export var fly_velocity = -130.0
@@ -12,9 +15,11 @@ extends CharacterBody2D
 var block_input_start: bool = true
 var block_input_end: bool = false
 
+signal the_player_has_been_revival
+
 func _ready() -> void:
-	start_nest.player_in_nest.connect(disable_input)
-	revival()
+	start_nest.player_in_nest.connect(_on_disable_input)
+	global_position = start_point.global_position
 
 func _physics_process(delta: float) -> void:
 	if block_input_start && !block_input_end:
@@ -58,9 +63,11 @@ func update_rotation(delta, direction: float):
 	
 	rotation = lerp(rotation, target_rotation, delta * rotation_speed)
 	
-func revival() -> void:
+func revival_of_player() -> void:
+	the_player_has_been_revival.emit()
 	global_position = start_point.global_position
 	block_input_start = true
+	print ("Все мухи потеряны!")
 
-func disable_input() -> void:
+func _on_disable_input() -> void:
 	block_input_end = true

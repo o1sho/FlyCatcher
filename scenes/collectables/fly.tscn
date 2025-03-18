@@ -35,14 +35,11 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="Fly" type="Node2D" groups=["fly"]]
+[node name="Fly" type="Area2D" groups=["fly"]]
+collision_mask = 2
 script = ExtResource("1_jmfr8")
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jmfr8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -52,4 +49,4 @@ autoplay = "default"
 frame = 2
 frame_progress = 0.0882339
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

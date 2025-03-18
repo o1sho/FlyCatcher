@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://82tmrt00f33e"]
+
+[ext_resource type="Script" uid="uid://bc6acaijfc328" path="res://scenes/damageObjects/moving_spikes.gd" id="1_n4748"]
+[ext_resource type="Texture2D" uid="uid://d5ahlvq1gln5" path="res://assets/MovingSpikes.png" id="1_nvjwl"]
+[ext_resource type="PackedScene" uid="uid://ucupkef2cy4v" path="res://scenes/components/hit_component.tscn" id="3_3vyvv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vsld3"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nmxuk"]
+
+[node name="MovingSpikes" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_n4748")
+speed = 50.0
+rotation_speed = 380.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vsld3")
+debug_color = Color(0.356727, 0.603224, 0.391256, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nvjwl")
+
+[node name="HitComponent" parent="." instance=ExtResource("3_3vyvv")]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
+shape = SubResource("CircleShape2D_nmxuk")
+debug_color = Color(1, 0.00489191, 0.0630841, 0.42)
