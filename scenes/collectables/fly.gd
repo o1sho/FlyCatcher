@@ -1,3 +1,4 @@
+class_name Fly
 extends Area2D
 
 signal collected
@@ -5,8 +6,10 @@ signal collected
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		collected.emit()
-		game_manager.add_fly()
-		#call_deferred("queue_free")
-		visible = false
-		set_deferred("monitoring", false)
+		player_caught()
+
+func player_caught() -> void:
+	collected.emit()
+	game_manager.add_fly()
+	visible = false
+	set_deferred("monitoring", false)

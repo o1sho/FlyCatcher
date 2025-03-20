@@ -14,7 +14,6 @@ func start_transition() -> void:
 	# Инициализируем шейдер
 	material.set_shader_parameter("center", player.global_position / get_viewport_rect().size)
 	
-	# Анимируем радиус от 1.0 до 0.0
 	tween = create_tween()
 	tween.tween_method(set_radius, 1.0, 0.0, 0.7)
 

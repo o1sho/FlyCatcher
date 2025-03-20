@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://deme6ifh760b7"]
+[gd_scene load_steps=19 format=3 uid="uid://deme6ifh760b7"]
 
 [ext_resource type="Script" uid="uid://qdgmq2elcswc" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Texture2D" uid="uid://d1yk7f67bc3nw" path="res://assets/SpriteSet.png" id="2_dovo2"]
+[ext_resource type="Texture2D" uid="uid://bl0728kh45463" path="res://assets/player_move.png" id="3_gmlin"]
+[ext_resource type="Texture2D" uid="uid://cyc6hr3p6vwhf" path="res://assets/idle.png" id="3_lvxji"]
+[ext_resource type="Texture2D" uid="uid://cgbsvdpdhornn" path="res://assets/SpriteSet4.png" id="5_p47bc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gmlin"]
-radius = 5.0
+radius = 4.0
 height = 10.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvxji"]
@@ -27,6 +30,26 @@ region = Rect2(32, 16, 16, 16)
 atlas = ExtResource("2_dovo2")
 region = Rect2(0, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm80t"]
+atlas = ExtResource("3_lvxji")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx1jg"]
+atlas = ExtResource("3_lvxji")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gtgg"]
+atlas = ExtResource("3_gmlin")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h17s1"]
+atlas = ExtResource("3_gmlin")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je7p5"]
+atlas = ExtResource("3_gmlin")
+region = Rect2(32, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_5gtgg"]
 animations = [{
 "frames": [{
@@ -47,7 +70,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0owmy")
 }],
-"loop": false,
+"loop": true,
 "name": &"fly",
 "speed": 6.0
 }, {
@@ -58,7 +81,36 @@ animations = [{
 "loop": false,
 "name": &"idle",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm80t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx1jg")
+}],
+"loop": true,
+"name": &"idle_on_floor",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gtgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h17s1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je7p5")
+}],
+"loop": true,
+"name": &"move",
+"speed": 6.0
 }]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugbui"]
+atlas = ExtResource("5_p47bc")
+region = Rect2(160, 128, 16, 16)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 2
@@ -73,8 +125,12 @@ rotation_speed = 50
 shape = SubResource("CapsuleShape2D_gmlin")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_5gtgg")
-animation = &"fly"
+animation = &"idle"
 autoplay = "idle"
-frame = 2
-frame_progress = 1.0
+
+[node name="FatFly" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 4)
+texture = SubResource("AtlasTexture_ugbui")

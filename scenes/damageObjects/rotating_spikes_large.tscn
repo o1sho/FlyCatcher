@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://dba1wk4gdn7rm"]
+
+[ext_resource type="Script" uid="uid://bc6acaijfc328" path="res://scenes/damageObjects/moving_spikes.gd" id="1_t7e8y"]
+[ext_resource type="Texture2D" uid="uid://cgbsvdpdhornn" path="res://assets/SpriteSet4.png" id="2_kwya3"]
+[ext_resource type="PackedScene" uid="uid://ucupkef2cy4v" path="res://scenes/components/hit_component.tscn" id="3_mcu4j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltwae"]
+size = Vector2(4, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs5rn"]
+atlas = ExtResource("2_kwya3")
+region = Rect2(48, 48, 16, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nd4a0"]
+size = Vector2(2, 62)
+
+[node name="RotatingSpikesLarge" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_t7e8y")
+speed = 50.0
+rotation_speed = 380.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ltwae")
+debug_color = Color(0.356727, 0.603224, 0.391256, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_cs5rn")
+
+[node name="HitComponent" parent="." instance=ExtResource("3_mcu4j")]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
+shape = SubResource("RectangleShape2D_nd4a0")
+debug_color = Color(1, 0.00489191, 0.0630841, 0.42)

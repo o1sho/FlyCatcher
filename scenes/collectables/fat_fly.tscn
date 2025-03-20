@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0pmds10roe44"]
+
+[ext_resource type="Script" uid="uid://b7od4a6vi43u8" path="res://scenes/collectables/fat_fly.gd" id="1_upwh8"]
+[ext_resource type="Texture2D" uid="uid://cgbsvdpdhornn" path="res://assets/SpriteSet4.png" id="2_kcrgv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xlkcs"]
+radius = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i012x"]
+atlas = ExtResource("2_kcrgv")
+region = Rect2(128, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtc8e"]
+atlas = ExtResource("2_kcrgv")
+region = Rect2(144, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhet0"]
+atlas = ExtResource("2_kcrgv")
+region = Rect2(160, 144, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7hbb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i012x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtc8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhet0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="FatFly" type="Area2D" groups=["fly"]]
+collision_mask = 2
+script = ExtResource("1_upwh8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xlkcs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_g7hbb")
+autoplay = "default"
+frame = 2
+frame_progress = 0.223306
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
