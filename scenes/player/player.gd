@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var game_manager: GameManager = $"../GameManager"
 @onready var fat_fly: Sprite2D = $FatFly
+@onready var animated_shadow: AnimatedSprite2D = $AnimatedSprite2Dshadow
 
 
 @export var speed = 60
@@ -55,12 +56,16 @@ func _physics_process(delta: float) -> void:
 		
 		if !is_on_floor() and velocity.y < 0:
 			animated_sprite_2d.play("fly")
+			animated_shadow.play("fly")
 		elif !is_on_floor() and velocity.y > 0:
 			animated_sprite_2d.play("fall")
+			animated_shadow.play("fall")
 		elif is_on_floor() and velocity.x == 0:
 			animated_sprite_2d.play("idle_on_floor")
+			animated_shadow.play("idle_on_floor")
 		elif is_on_floor() and velocity.x != 0:
 			animated_sprite_2d.play("move")
+			animated_shadow.play("move")
 
 		update_rotation(delta, direction)
 		move_and_slide()
@@ -83,6 +88,7 @@ func revival_of_player() -> void:
 	if fat_fly.visible:
 		fat_fly.visible = false
 	animated_sprite_2d.play("idle")
+	animated_shadow.play("idle")
 
 func _on_disable_input() -> void:
 	block_input_end = true

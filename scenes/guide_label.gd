@@ -10,7 +10,7 @@ func _ready() -> void:
 	label_2.modulate.a = 0.0
 		
 	var tween = create_tween()
-	tween.tween_property(label_1, "modulate:a", 1.0, 2.0)
+	tween.tween_property(label_1, "modulate:a", 0.5, 2.0)
 	
 	var game_manager = get_tree().root.find_child("GameManager", true, false)
 	game_manager.first_fly_caught.connect(hide_guide)
@@ -29,5 +29,5 @@ func hide_guide() -> void:
 func unhide_finish_guide() -> void:
 		
 	var tween = create_tween()
-	tween.tween_property(label_2, "modulate:a", 1.0, 1.0)
+	tween.tween_property(label_2, "modulate:a", 0.5, 1.0)
 	#tween.tween_callback(label_2.queue_free)

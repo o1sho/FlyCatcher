@@ -11,7 +11,7 @@ func _ready() -> void:
 func start_transition() -> void:
 	var viewport_size = get_viewport_rect().size
 	material.set_shader_parameter("viewport_size", viewport_size)
-	# Инициализируем шейдер
+
 	material.set_shader_parameter("center", player.global_position / get_viewport_rect().size)
 	
 	tween = create_tween()

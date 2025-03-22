@@ -124,10 +124,17 @@ rotation_speed = 50
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
 shape = SubResource("CapsuleShape2D_gmlin")
 
+[node name="AnimatedSprite2Dshadow" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.196078)
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_5gtgg")
+animation = &"move"
+autoplay = "idle"
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_5gtgg")
-animation = &"idle"
+animation = &"idle_on_floor"
 autoplay = "idle"
 
 [node name="FatFly" type="Sprite2D" parent="."]
