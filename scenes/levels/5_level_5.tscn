@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bbohfru2f2jc2"]
+[gd_scene load_steps=13 format=4 uid="uid://bbohfru2f2jc2"]
 
 [ext_resource type="Script" uid="uid://csqknlibjuf4p" path="res://scenes/levels/level.gd" id="1_8tg1x"]
 [ext_resource type="PackedScene" uid="uid://bj501vgn4f7cd" path="res://scenes/background.tscn" id="2_kwtj0"]
@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://wsqgg7xhy1pq" path="res://scenes/game_manager.tscn" id="6_5r0ey"]
 [ext_resource type="PackedScene" uid="uid://c2id4jgm7wp0" path="res://scenes/start_nest.tscn" id="7_n38sp"]
 [ext_resource type="PackedScene" uid="uid://c0pmds10roe44" path="res://scenes/collectables/fat_fly.tscn" id="8_8tg1x"]
-[ext_resource type="PackedScene" uid="uid://b60xvlwfy2gh5" path="res://scenes/damageObjects/spikes.tscn" id="9_2jeru"]
-[ext_resource type="PackedScene" uid="uid://dba1wk4gdn7rm" path="res://scenes/damageObjects/rotating_spikes_large.tscn" id="9_kwtj0"]
+[ext_resource type="PackedScene" uid="uid://b60xvlwfy2gh5" path="res://scenes/damage_objects/spikes.tscn" id="9_2jeru"]
+[ext_resource type="PackedScene" uid="uid://dba1wk4gdn7rm" path="res://scenes/damage_objects/rotating_spikes_large.tscn" id="9_kwtj0"]
+[ext_resource type="PackedScene" uid="uid://xjvkr11q2drg" path="res://scenes/ui/ingame_ui.tscn" id="10_kwtj0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsp8v"]
 texture = ExtResource("3_i4k7m")
@@ -315,7 +316,7 @@ terrain_set_0/terrain_1/name = "ground"
 terrain_set_0/terrain_1/color = Color(0.29538, 0.507601, 0.146434, 1)
 sources/2 = SubResource("TileSetAtlasSource_qsp8v")
 
-[node name="Level_2" type="Node2D"]
+[node name="Level_5" type="Node2D"]
 script = ExtResource("1_8tg1x")
 
 [node name="bg" parent="." instance=ExtResource("2_kwtj0")]
@@ -392,3 +393,5 @@ point_a = Vector2(128, 120)
 point_b = Vector2(128, 120)
 speed = 0.0
 rotation_speed = 100.0
+
+[node name="IngameUI" parent="." instance=ExtResource("10_kwtj0")]

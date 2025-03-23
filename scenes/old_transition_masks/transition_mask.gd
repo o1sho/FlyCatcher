@@ -8,7 +8,7 @@ func _ready() -> void:
 	tween = create_tween()
 	tween.tween_method(set_radius, 0.0, 1.0, 0.7)
 
-func start_transition() -> void:
+func start_transition_between_level() -> void:
 	var viewport_size = get_viewport_rect().size
 	material.set_shader_parameter("viewport_size", viewport_size)
 

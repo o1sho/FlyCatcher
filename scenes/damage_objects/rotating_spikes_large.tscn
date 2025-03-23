@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dba1wk4gdn7rm"]
 
-[ext_resource type="Script" uid="uid://bc6acaijfc328" path="res://scenes/damageObjects/moving_spikes.gd" id="1_t7e8y"]
+[ext_resource type="Script" uid="uid://bc6acaijfc328" path="res://scenes/damage_objects/moving_spikes.gd" id="1_t7e8y"]
 [ext_resource type="Texture2D" uid="uid://cgbsvdpdhornn" path="res://assets/SpriteSet4.png" id="2_kwya3"]
 [ext_resource type="PackedScene" uid="uid://ucupkef2cy4v" path="res://scenes/components/hit_component.tscn" id="3_mcu4j"]
 

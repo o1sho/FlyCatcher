@@ -1,12 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://btf1p7jd35t1i"]
 
-[ext_resource type="FontFile" uid="uid://cpgd2c3h1j7je" path="res://assets/ui/zx_palm.ttf" id="1_my70e"]
 [ext_resource type="Script" uid="uid://cun81p87ciugq" path="res://scenes/guide_label.gd" id="1_nftq6"]
+[ext_resource type="FontFile" uid="uid://pb8vo3u07cku" path="res://assets/ui/BlockCraft.otf" id="2_nftq6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nftq6"]
 line_spacing = 6.0
-font = ExtResource("1_my70e")
-font_size = 8
+font = ExtResource("2_nftq6")
 font_color = Color(0.960784, 0.909804, 0.819608, 1)
 
 [node name="GuideLabel" type="CanvasLayer"]

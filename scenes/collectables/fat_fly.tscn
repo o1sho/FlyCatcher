@@ -42,6 +42,14 @@ script = ExtResource("1_upwh8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xlkcs")
 
+[node name="AnimatedSprite2DShadow" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.352941)
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_g7hbb")
+autoplay = "default"
+frame = 2
+frame_progress = 0.223306
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_g7hbb")

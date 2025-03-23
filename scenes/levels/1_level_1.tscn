@@ -1,14 +1,15 @@
-[gd_scene load_steps=12 format=4 uid="uid://c8hscqtxioq8y"]
+[gd_scene load_steps=13 format=4 uid="uid://c8hscqtxioq8y"]
 
 [ext_resource type="Script" uid="uid://csqknlibjuf4p" path="res://scenes/levels/level.gd" id="1_wbdqu"]
 [ext_resource type="PackedScene" uid="uid://dyb1o3jgpjohf" path="res://scenes/levels/2_level_2.tscn" id="2_lj4ij"]
 [ext_resource type="PackedScene" uid="uid://bj501vgn4f7cd" path="res://scenes/background.tscn" id="3_41wn5"]
 [ext_resource type="Texture2D" uid="uid://dtfq2kf16duih" path="res://assets/SpriteSet3.png" id="4_cnuu7"]
-[ext_resource type="PackedScene" uid="uid://b60xvlwfy2gh5" path="res://scenes/damageObjects/spikes.tscn" id="5_ebjh8"]
+[ext_resource type="PackedScene" uid="uid://b60xvlwfy2gh5" path="res://scenes/damage_objects/spikes.tscn" id="5_ebjh8"]
 [ext_resource type="PackedScene" uid="uid://deme6ifh760b7" path="res://scenes/player/player.tscn" id="6_xxrp1"]
 [ext_resource type="PackedScene" uid="uid://7xc656hsrc8v" path="res://scenes/collectables/fly.tscn" id="7_yjfgm"]
 [ext_resource type="PackedScene" uid="uid://wsqgg7xhy1pq" path="res://scenes/game_manager.tscn" id="8_f4qv6"]
 [ext_resource type="PackedScene" uid="uid://c2id4jgm7wp0" path="res://scenes/start_nest.tscn" id="9_lj4ij"]
+[ext_resource type="PackedScene" uid="uid://xjvkr11q2drg" path="res://scenes/ui/ingame_ui.tscn" id="10_41wn5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsp8v"]
 texture = ExtResource("4_cnuu7")
@@ -380,3 +381,5 @@ position = Vector2(165, 192)
 
 [node name="Spikes11" parent="Spikes" instance=ExtResource("5_ebjh8")]
 position = Vector2(180, 192)
+
+[node name="IngameUI" parent="." instance=ExtResource("10_41wn5")]

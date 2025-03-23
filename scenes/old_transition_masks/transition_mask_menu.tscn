@@ -1,11 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://gi1upwhw13de"]
+[gd_scene load_steps=7 format=3 uid="uid://bltwaboskagnk"]
 
-[ext_resource type="Shader" uid="uid://bx2nmyymftni5" path="res://shaders/transition.gdshader" id="1_uw762"]
-[ext_resource type="Script" uid="uid://dllua04uahbd3" path="res://scenes/transition_mask.gd" id="2_y1ont"]
-[ext_resource type="Shader" uid="uid://chf832wdy63wy" path="res://scenes/CRTeffect.gdshader" id="3_y1ont"]
+[ext_resource type="Script" uid="uid://dp8yuemv6dnw" path="res://scenes/old_transition_masks/canvas_transition_mask_menu.gd" id="1_ax72p"]
+[ext_resource type="Shader" uid="uid://bx2nmyymftni5" path="res://shaders/transition.gdshader" id="1_ybl8x"]
+[ext_resource type="Script" uid="uid://cl6gjbs31sp8o" path="res://scenes/old_transition_masks/transition_mask_menu.gd" id="2_ybl8x"]
+[ext_resource type="Shader" uid="uid://chf832wdy63wy" path="res://scenes/CRTeffect.gdshader" id="3_dix1b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vfu0f"]
-shader = ExtResource("1_uw762")
+shader = ExtResource("1_ybl8x")
 shader_parameter/color = Color(0.0588235, 0.105882, 0.14902, 1)
 shader_parameter/center = Vector2(0.5, 0.5)
 shader_parameter/radius = 0.386
@@ -13,14 +14,15 @@ shader_parameter/viewport_size = Vector2(0, 0)
 shader_parameter/pixel_scale = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yqqf0"]
-shader = ExtResource("3_y1ont")
+shader = ExtResource("3_dix1b")
 shader_parameter/scanline_intensity = 0.701
 shader_parameter/noise_intensity = 0.549
 shader_parameter/curvature = 0.1
 shader_parameter/vignette_power = 2.072
 shader_parameter/opacity = 0.072
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="TransitionMaskMenu" type="CanvasLayer"]
+script = ExtResource("1_ax72p")
 
 [node name="TransitionMask" type="ColorRect" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -33,7 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("2_y1ont")
+script = ExtResource("2_ybl8x")
 
 [node name="CRTeffect" type="ColorRect" parent="."]
 visible = false
