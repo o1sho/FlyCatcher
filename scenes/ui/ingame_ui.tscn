@@ -8,7 +8,7 @@
 shader = ExtResource("2_sj4bp")
 shader_parameter/color = Color(0.0588235, 0.105882, 0.14902, 1)
 shader_parameter/center = Vector2(0.5, 0.5)
-shader_parameter/radius = 0.991
+shader_parameter/radius = 1.0
 shader_parameter/viewport_size = Vector2(256, 240)
 shader_parameter/pixel_scale = 1.0
 

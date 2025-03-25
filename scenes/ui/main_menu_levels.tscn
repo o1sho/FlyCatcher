@@ -1,0 +1,522 @@
+[gd_scene load_steps=10 format=3 uid="uid://dsp1sfjtfyrj4"]
+
+[ext_resource type="Script" uid="uid://c8u4doiitcn2n" path="res://scenes/ui/main_menu_levels.gd" id="1_4kg8t"]
+[ext_resource type="Theme" uid="uid://yb0bgfpxjcct" path="res://scenes/ui/main_menu_button.tres" id="2_wenvr"]
+[ext_resource type="Texture2D" uid="uid://qh3rfc1j052s" path="res://assets/fly.png" id="3_fjfk3"]
+[ext_resource type="PackedScene" uid="uid://xjvkr11q2drg" path="res://scenes/ui/ingame_ui.tscn" id="4_p2nd5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jmfr8"]
+radius = 3.16228
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2kps"]
+atlas = ExtResource("3_fjfk3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2cpg"]
+atlas = ExtResource("3_fjfk3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sslou"]
+atlas = ExtResource("3_fjfk3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f8not"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2kps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2cpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sslou")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="MainMenuLevels" type="Control" node_paths=PackedStringArray("level_buttons_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4kg8t")
+level_buttons_container = NodePath("CenterContainer/LevelsGridContainer")
+
+[node name="bg" type="ColorRect" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0588235, 0.105882, 0.14902, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 48.0
+offset_bottom = -48.0
+grow_vertical = 2
+color = Color(0.12549, 0.647059, 0.65098, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = 40.0
+offset_right = 248.0
+offset_bottom = -48.0
+grow_vertical = 2
+color = Color(0.12549, 0.647059, 0.65098, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelsGridContainer" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
+columns = 5
+
+[node name="1" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "1"
+icon_alignment = 1
+
+[node name="2" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "2"
+icon_alignment = 1
+
+[node name="3" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "3"
+icon_alignment = 1
+
+[node name="4" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "4"
+icon_alignment = 1
+
+[node name="5" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "5"
+icon_alignment = 1
+
+[node name="6" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "6"
+icon_alignment = 1
+
+[node name="7" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "7"
+icon_alignment = 1
+
+[node name="8" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "8"
+icon_alignment = 1
+
+[node name="9" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "9"
+icon_alignment = 1
+
+[node name="10" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "10"
+icon_alignment = 1
+
+[node name="11" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "11"
+icon_alignment = 1
+
+[node name="12" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "12"
+icon_alignment = 1
+
+[node name="13" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "13"
+icon_alignment = 1
+
+[node name="14" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "14"
+icon_alignment = 1
+
+[node name="15" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "15"
+icon_alignment = 1
+
+[node name="16" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "16"
+icon_alignment = 1
+
+[node name="17" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "17"
+icon_alignment = 1
+
+[node name="18" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "18"
+icon_alignment = 1
+
+[node name="19" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "19"
+icon_alignment = 1
+
+[node name="20" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "20"
+icon_alignment = 1
+
+[node name="21" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "21"
+icon_alignment = 1
+
+[node name="22" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "22"
+icon_alignment = 1
+
+[node name="23" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "23"
+icon_alignment = 1
+
+[node name="24" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "24"
+icon_alignment = 1
+
+[node name="25" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "25"
+icon_alignment = 1
+
+[node name="Fly" type="Area2D" parent="." groups=["fly"]]
+position = Vector2(32, 56)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fly"]
+shape = SubResource("CircleShape2D_jmfr8")
+
+[node name="AnimatedSprite2Dshadow" type="AnimatedSprite2D" parent="Fly"]
+modulate = Color(0, 0, 0, 0.196078)
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_f8not")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0882339
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fly"]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_f8not")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0882339
+
+[node name="Fly2" type="Area2D" parent="." groups=["fly"]]
+position = Vector2(32, 96)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fly2"]
+shape = SubResource("CircleShape2D_jmfr8")
+
+[node name="AnimatedSprite2Dshadow" type="AnimatedSprite2D" parent="Fly2"]
+modulate = Color(0, 0, 0, 0.196078)
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_f8not")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0882339
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fly2"]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_f8not")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0882339
+
+[node name="Fly3" type="Area2D" parent="." groups=["fly"]]
+position = Vector2(32, 136)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fly3"]
+shape = SubResource("CircleShape2D_jmfr8")
+
+[node name="AnimatedSprite2Dshadow" type="AnimatedSprite2D" parent="Fly3"]
+modulate = Color(0, 0, 0, 0.196078)
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_f8not")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0882339
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fly3"]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_f8not")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0882339
+
+[node name="Fly4" type="Area2D" parent="." groups=["fly"]]
+position = Vector2(32, 176)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fly4"]
+shape = SubResource("CircleShape2D_jmfr8")
+
+[node name="AnimatedSprite2Dshadow" type="AnimatedSprite2D" parent="Fly4"]
+modulate = Color(0, 0, 0, 0.196078)
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_f8not")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0882339
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fly4"]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_f8not")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0882339
+
+[node name="Fly5" type="Area2D" parent="." groups=["fly"]]
+position = Vector2(224, 56)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fly5"]
+shape = SubResource("CircleShape2D_jmfr8")
+
+[node name="AnimatedSprite2Dshadow" type="AnimatedSprite2D" parent="Fly5"]
+modulate = Color(0, 0, 0, 0.196078)
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_f8not")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0882339
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fly5"]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_f8not")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0882339
+
+[node name="Fly6" type="Area2D" parent="." groups=["fly"]]
+position = Vector2(224, 96)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fly6"]
+shape = SubResource("CircleShape2D_jmfr8")
+
+[node name="AnimatedSprite2Dshadow" type="AnimatedSprite2D" parent="Fly6"]
+modulate = Color(0, 0, 0, 0.196078)
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_f8not")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0882339
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fly6"]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_f8not")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0882339
+
+[node name="Fly7" type="Area2D" parent="." groups=["fly"]]
+position = Vector2(224, 136)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fly7"]
+shape = SubResource("CircleShape2D_jmfr8")
+
+[node name="AnimatedSprite2Dshadow" type="AnimatedSprite2D" parent="Fly7"]
+modulate = Color(0, 0, 0, 0.196078)
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_f8not")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0882339
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fly7"]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_f8not")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0882339
+
+[node name="Fly8" type="Area2D" parent="." groups=["fly"]]
+position = Vector2(224, 176)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fly8"]
+shape = SubResource("CircleShape2D_jmfr8")
+
+[node name="AnimatedSprite2Dshadow" type="AnimatedSprite2D" parent="Fly8"]
+modulate = Color(0, 0, 0, 0.196078)
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_f8not")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0882339
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fly8"]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_f8not")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0882339
+
+[node name="IngameUI" parent="." instance=ExtResource("4_p2nd5")]

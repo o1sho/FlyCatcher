@@ -9,6 +9,7 @@ func _ready() -> void:
 
 func start_transition_decrease(target_position: Vector2, duration: float = 0.7) -> void:
 
+	visible = true
 	var viewport_size = get_viewport().get_visible_rect().size
 	
 	var center_uv = target_position / viewport_size
@@ -17,9 +18,11 @@ func start_transition_decrease(target_position: Vector2, duration: float = 0.7) 
 	tween = create_tween().set_ease(Tween.EASE_IN_OUT)
 	tween.tween_method(set_radius, 1.0, 0.0, duration)
 	await tween.finished
+	visible = false
 	
 func start_transition_increase(target_position: Vector2, duration: float = 0.7) -> void:
 
+	visible = true
 	var viewport_size = get_viewport().get_visible_rect().size
 	
 	var center_uv = target_position / viewport_size
@@ -28,6 +31,7 @@ func start_transition_increase(target_position: Vector2, duration: float = 0.7) 
 	tween = create_tween().set_ease(Tween.EASE_IN_OUT)
 	tween.tween_method(set_radius, 0.0, 1.0, duration)
 	await tween.finished
+	visible = false
 
 func set_radius(value: float) -> void:
 	transition_mask.material.set_shader_parameter("radius", value)

@@ -5,19 +5,20 @@ extends Control
 var center
 
 func _ready() -> void:
-	%play.pressed.connect(play)
+	%play.pressed.connect(_on_play_button)
+	
 	set_scene_center()
 	
 	transition_mask.start_transition_increase(center)
 	
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
-		play()
+		_on_play_button()
 	
-func play():
+func _on_play_button():
 	transition_mask.start_transition_decrease(center)
 	await transition_mask.tween.finished
-	get_tree().change_scene_to_file('res://scenes/levels/0_level_start.tscn')
+	get_tree().change_scene_to_file('res://scenes/ui/main_menu_levels.tscn')
 
 
 func set_scene_center() -> void:
