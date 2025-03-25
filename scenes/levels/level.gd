@@ -4,8 +4,12 @@ extends Node
 @onready var player: Player = $Player
 @onready var transition_mask: IngameUI = $IngameUI
 
+var current_level: int
+
 func _ready() -> void:
 	transition_mask.start_transition_increase(player.global_position)
+	
+	current_level = int(get_tree().current_scene.name) + 1
 
 func get_next_level() -> PackedScene:
 	return next_level_instance
@@ -13,6 +17,8 @@ func get_next_level() -> PackedScene:
 func finish_level():
 	transition_mask.start_transition_decrease(player.global_position)
 	await transition_mask.tween.finished
+	
+	Data.save_progress(current_level)
 	
 	var current_scene = get_tree().current_scene
 	var next_level = current_scene.get_next_level()

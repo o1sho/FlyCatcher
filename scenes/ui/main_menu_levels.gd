@@ -6,10 +6,8 @@ var center
 
 @export var level_buttons_container: GridContainer
 
-var current_unlocked_level: int = 1
-
 func _ready() -> void:
-	#%play.pressed.connect(_on_play_button)
+	Data.load_progress()
 	
 	set_scene_center()
 	transition_mask.start_transition_increase(center)
@@ -28,7 +26,7 @@ func init_level_button() -> void:
 			var level_num = button.name.to_int()
 			button.pressed.connect(_on_level_button_pressed.bind(level_num))
 			print (button.name, " сигнал подключен.")
-			if current_unlocked_level != button.name.to_int():
+			if Data.current_unlocked_level < button.name.to_int():
 				button.disabled = true
 			
 func set_scene_center() -> void:
@@ -36,7 +34,7 @@ func set_scene_center() -> void:
 	center = viewport.size / 2
 
 func _on_level_button_pressed(level_number: int):
-	if level_number <= current_unlocked_level:
+	if level_number <= Data.current_unlocked_level:
 		var path = "res://scenes/levels/level_%d.tscn" % level_number
 		print(path)
 		if ResourceLoader.exists(path):
