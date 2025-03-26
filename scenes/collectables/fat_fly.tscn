@@ -1,7 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0pmds10roe44"]
+[gd_scene load_steps=9 format=3 uid="uid://c0pmds10roe44"]
 
 [ext_resource type="Script" uid="uid://b7od4a6vi43u8" path="res://scenes/collectables/fat_fly.gd" id="1_upwh8"]
 [ext_resource type="Texture2D" uid="uid://cgbsvdpdhornn" path="res://assets/SpriteSet4.png" id="2_kcrgv"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kcrgv"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 7.0
+spread = 180.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 9.8, 0)
+color = Color(0, 0, 0, 0.156863)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xlkcs"]
 radius = 4.0
@@ -38,6 +47,10 @@ animations = [{
 [node name="FatFly" type="Area2D" groups=["fly"]]
 collision_mask = 2
 script = ExtResource("1_upwh8")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+lifetime = 0.28
+process_material = SubResource("ParticleProcessMaterial_kcrgv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xlkcs")

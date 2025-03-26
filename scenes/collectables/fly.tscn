@@ -1,7 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://7xc656hsrc8v"]
+[gd_scene load_steps=9 format=3 uid="uid://7xc656hsrc8v"]
 
 [ext_resource type="Script" uid="uid://cfuqcjnk40r5u" path="res://scenes/collectables/fly.gd" id="1_jmfr8"]
 [ext_resource type="Texture2D" uid="uid://qh3rfc1j052s" path="res://assets/fly.png" id="1_rfn2a"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jmfr8"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 5.0
+spread = 180.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, 9.8, 0)
+color = Color(0, 0, 0, 0.156863)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jmfr8"]
 radius = 3.16228
@@ -38,6 +47,11 @@ animations = [{
 [node name="Fly" type="Area2D" groups=["fly"]]
 collision_mask = 2
 script = ExtResource("1_jmfr8")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 5
+lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_jmfr8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jmfr8")
