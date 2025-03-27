@@ -1,13 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://82tmrt00f33e"]
+[gd_scene load_steps=7 format=3 uid="uid://82tmrt00f33e"]
 
 [ext_resource type="Script" uid="uid://bc6acaijfc328" path="res://scenes/damage_objects/moving_spikes.gd" id="1_n4748"]
-[ext_resource type="Texture2D" uid="uid://d5ahlvq1gln5" path="res://assets/MovingSpikes.png" id="1_nvjwl"]
+[ext_resource type="Texture2D" uid="uid://cgbsvdpdhornn" path="res://assets/SpriteSet4.png" id="2_o0qow"]
 [ext_resource type="PackedScene" uid="uid://ucupkef2cy4v" path="res://scenes/components/hit_component.tscn" id="3_3vyvv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vsld3"]
-radius = 6.0
+radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whwpd"]
+atlas = ExtResource("2_o0qow")
+region = Rect2(176, 128, 32, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nmxuk"]
+radius = 8.0
 
 [node name="MovingSpikes" type="Area2D"]
 collision_mask = 2
@@ -20,7 +25,7 @@ shape = SubResource("CircleShape2D_vsld3")
 debug_color = Color(0.356727, 0.603224, 0.391256, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_nvjwl")
+texture = SubResource("AtlasTexture_whwpd")
 
 [node name="HitComponent" parent="." instance=ExtResource("3_3vyvv")]
 collision_mask = 2

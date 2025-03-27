@@ -1,34 +1,33 @@
-[gd_scene load_steps=7 format=3 uid="uid://2tlaiaqiom66"]
+[gd_scene load_steps=7 format=3 uid="uid://v1it1lf3pk5h"]
 
-[ext_resource type="Script" uid="uid://bc6acaijfc328" path="res://scenes/damage_objects/moving_spikes.gd" id="1_qc6gy"]
-[ext_resource type="Texture2D" uid="uid://cgbsvdpdhornn" path="res://assets/SpriteSet4.png" id="2_qc6gy"]
-[ext_resource type="PackedScene" uid="uid://ucupkef2cy4v" path="res://scenes/components/hit_component.tscn" id="3_cs5rn"]
+[ext_resource type="Script" uid="uid://bc6acaijfc328" path="res://scenes/damage_objects/moving_spikes.gd" id="1_r5nf0"]
+[ext_resource type="Texture2D" uid="uid://cgbsvdpdhornn" path="res://assets/SpriteSet4.png" id="2_hhgbt"]
+[ext_resource type="PackedScene" uid="uid://ucupkef2cy4v" path="res://scenes/components/hit_component.tscn" id="3_1hgj4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltwae"]
-size = Vector2(4, 29)
+size = Vector2(4, 60)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cs5rn"]
-atlas = ExtResource("2_qc6gy")
-region = Rect2(32, 64, 16, 32)
+atlas = ExtResource("2_hhgbt")
+region = Rect2(208, 32, 16, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nd4a0"]
-size = Vector2(2, 28)
+size = Vector2(2, 60)
 
-[node name="RotatingSpikes" type="Area2D"]
+[node name="RotatingSpikesSmall" type="Area2D"]
 collision_mask = 2
-script = ExtResource("1_qc6gy")
+script = ExtResource("1_r5nf0")
 speed = 50.0
 rotation_speed = 380.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ltwae")
 debug_color = Color(0.356727, 0.603224, 0.391256, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_cs5rn")
 
-[node name="HitComponent" parent="." instance=ExtResource("3_cs5rn")]
+[node name="HitComponent" parent="." instance=ExtResource("3_1hgj4")]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitComponent"]

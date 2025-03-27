@@ -86,7 +86,7 @@ save_reset={
 
 [physics]
 
-2d/default_gravity=310.0
+2d/default_gravity=260.0
 
 [rendering]
 

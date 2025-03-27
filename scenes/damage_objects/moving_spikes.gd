@@ -5,10 +5,17 @@ extends Area2D
 @export var speed: float = 100
 @export var rotation_speed: float = 180
 
+@export var not_move: bool = false
+
 var target_point: Vector2
 
 func _ready() -> void:
 	target_point = point_b
+	
+	if not_move:
+		point_a = global_position
+		point_b = global_position
+		speed = 0
 
 func _physics_process(delta: float) -> void:
 
