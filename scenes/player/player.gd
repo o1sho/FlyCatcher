@@ -5,6 +5,9 @@ extends CharacterBody2D
 @onready var game_manager: GameManager = $"../GameManager"
 @onready var fat_fly: Sprite2D = $FatFly
 @onready var animated_shadow: AnimatedSprite2D = $AnimatedSprite2Dshadow
+@onready var camera: Camera = $"../Camera"
+
+
 
 
 @export var speed = 60
@@ -24,7 +27,7 @@ func _ready() -> void:
 	global_position = start_point.global_position
 	
 	fat_fly.visible = false
-
+	
 func _physics_process(delta: float) -> void:
 	if block_input_start && !block_input_end:
 		var direction := Input.get_axis("ui_left", "ui_right")
@@ -82,6 +85,7 @@ func update_rotation(delta, direction: float):
 	
 func revival_of_player() -> void:
 	the_player_has_been_revival.emit()
+	camera.start_shake()
 	global_position = start_point.global_position
 	block_input_start = true
 	print ("Все мухи потеряны!")

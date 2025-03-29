@@ -38,7 +38,7 @@ func reset_flies() -> void:
 	var flies_at_level = get_tree().get_nodes_in_group("fly")
 	for fly in flies_at_level:
 		fly.visible = true
-		fly.set_deferred("monitoring", true)
+		#fly.set_deferred("monitoring", true)
 	flies_collected = 0
 
 func _revival_of_flies() -> void:	
