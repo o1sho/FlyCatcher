@@ -13,4 +13,4 @@ func player_caught() -> void:
 	collected.emit()
 	game_manager.add_fly()
 	visible = false
-	#set_deferred("monitoring", false)
+	set_deferred("monitoring", false)

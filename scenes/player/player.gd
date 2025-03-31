@@ -11,8 +11,10 @@ extends CharacterBody2D
 
 
 @export var speed = 60
-@export var fly_velocity = -130.0
+@export var fly_velocity = -80.0
 @export var rotation_speed = 20
+var charge_time: float = 0.0
+@export var charge_time_max: float = 0.4
 
 @onready var start_point: Node2D = $"../StartPoint"
 @onready var start_nest: Node2D = $"../StartNest"
@@ -44,11 +46,20 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 		
 	if !block_input_start and !block_input_end:
-		if Input.is_action_just_pressed("ui_accept"):
-			velocity.y = fly_velocity
+		var is_jumping = Input.is_action_pressed("ui_accept")
+		if is_jumping:
+			charge_time += delta
+			if charge_time < charge_time_max:
+				velocity.y = fly_velocity
+				if fat_fly.visible: 
+					velocity.y = fly_velocity / 1.8
+		else:
+			charge_time = 0
+		#if Input.is_action_just_pressed("ui_accept"):
+			#velocity.y = fly_velocity
 
-		if Input.is_action_just_pressed("ui_accept") and fat_fly.visible:
-			velocity.y = fly_velocity / 1.8
+		#if Input.is_action_just_pressed("ui_accept") and fat_fly.visible:
+			#velocity.y = fly_velocity / 1.8
 
 		var direction := Input.get_axis("ui_left", "ui_right")
 		if direction:
@@ -84,6 +95,7 @@ func update_rotation(delta, direction: float):
 	rotation = lerp(rotation, target_rotation, delta * rotation_speed)
 	
 func revival_of_player() -> void:
+	set_collision_layer_value(2, false)
 	the_player_has_been_revival.emit()
 	camera.start_shake()
 	global_position = start_point.global_position
@@ -93,6 +105,8 @@ func revival_of_player() -> void:
 		fat_fly.visible = false
 	animated_sprite_2d.play("idle")
 	animated_shadow.play("idle")
+	await get_tree().create_timer(0.1).timeout
+	set_collision_layer_value(2, true)
 
 func _on_disable_input() -> void:
 	block_input_end = true

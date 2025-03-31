@@ -32,6 +32,7 @@ tile_set = ExtResource("4_6xwso")
 [node name="Player" parent="." groups=["player"] instance=ExtResource("5_0y7y4")]
 position = Vector2(128, 56)
 speed = 70
+fly_velocity = -80.0
 rotation_speed = 40
 
 [node name="fly2" parent="." instance=ExtResource("6_gruok")]

@@ -406,4 +406,5 @@ position = Vector2(208, 120)
 
 [node name="RotatingSpikesAverage" parent="." instance=ExtResource("10_6tvfy")]
 position = Vector2(128, 118)
+rotation_speed = 200.0
 not_move = true

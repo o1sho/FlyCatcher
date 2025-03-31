@@ -8,16 +8,18 @@ signal first_fly_caught
 signal all_flies_caught
 
 var is_fly_caught_first: bool = false
+var flies_at_level
 
 @onready var start_nest: StartNest = $"../StartNest"
 @onready var player: Player = $"../Player"
 func _ready() -> void:
 	player.the_player_has_been_revival.connect(_revival_of_flies)
 	
-	var flies_at_level = get_tree().get_nodes_in_group("fly").size()
-	flies_for_victory = flies_at_level
+	var flies_at_level_quantity = get_tree().get_nodes_in_group("fly").size()
+	flies_for_victory = flies_at_level_quantity
 	print ("Мух на уровне: ", flies_for_victory)
-
+	
+	flies_at_level = get_tree().get_nodes_in_group("fly")
 
 func add_fly() -> void:
 	flies_collected += 1
@@ -35,10 +37,9 @@ func check_flies() -> void:
 		print ("Ещё остались мухи...")
 
 func reset_flies() -> void:
-	var flies_at_level = get_tree().get_nodes_in_group("fly")
 	for fly in flies_at_level:
 		fly.visible = true
-		#fly.set_deferred("monitoring", true)
+		fly.set_deferred("monitoring", true)
 	flies_collected = 0
 
 func _revival_of_flies() -> void:	
