@@ -369,5 +369,5 @@ terrain_set_0/terrain_0/name = "bg"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 terrain_set_0/terrain_1/name = "ground"
 terrain_set_0/terrain_1/color = Color(0.29538, 0.507601, 0.146434, 1)
-sources/2 = SubResource("TileSetAtlasSource_qsp8v")
 sources/0 = SubResource("TileSetAtlasSource_tv7cl")
+sources/2 = SubResource("TileSetAtlasSource_qsp8v")

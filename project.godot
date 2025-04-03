@@ -25,6 +25,7 @@ window/size/viewport_height=240
 window/size/window_width_override=1024
 window/size/window_height_override=960
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://yl5vdkeypjlm"
 
 [file_customization]
 

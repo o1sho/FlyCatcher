@@ -3,11 +3,12 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var game_manager: GameManager = $"../GameManager"
-@onready var fat_fly: Sprite2D = $FatFly
+
 @onready var animated_shadow: AnimatedSprite2D = $AnimatedSprite2Dshadow
 @onready var camera: Camera = $"../Camera"
 
-
+@onready var fat_fly: Sprite2D = $FatFly
+@onready var key: Sprite2D = $Key
 
 
 @export var speed = 60
@@ -29,6 +30,7 @@ func _ready() -> void:
 	global_position = start_point.global_position
 	
 	fat_fly.visible = false
+	key.visible = false
 	
 func _physics_process(delta: float) -> void:
 	if block_input_start && !block_input_end:
@@ -51,7 +53,7 @@ func _physics_process(delta: float) -> void:
 			charge_time += delta
 			if charge_time < charge_time_max:
 				velocity.y = fly_velocity
-				if fat_fly.visible: 
+				if fat_fly.visible or key.visible: 
 					velocity.y = fly_velocity / 1.8
 		else:
 			charge_time = 0
@@ -71,6 +73,7 @@ func _physics_process(delta: float) -> void:
 		if !is_on_floor() and velocity.y < 0:
 			animated_sprite_2d.play("fly")
 			animated_shadow.play("fly")
+
 		elif !is_on_floor() and velocity.y > 0:
 			animated_sprite_2d.play("fall")
 			animated_shadow.play("fall")
@@ -101,8 +104,10 @@ func revival_of_player() -> void:
 	global_position = start_point.global_position
 	block_input_start = true
 	print ("Все мухи потеряны!")
-	if fat_fly.visible:
-		fat_fly.visible = false
+	
+	fat_fly.visible = false
+	key.visible = false
+	
 	animated_sprite_2d.play("idle")
 	animated_shadow.play("idle")
 	await get_tree().create_timer(0.1).timeout

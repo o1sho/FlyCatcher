@@ -1,184 +1,184 @@
-[gd_scene load_steps=16 format=4 uid="uid://byc40cji604e3"]
+[gd_scene load_steps=16 format=4 uid="uid://ci41ov74yjwt2"]
 
-[ext_resource type="Script" uid="uid://csqknlibjuf4p" path="res://scenes/levels/level.gd" id="1_v1y24"]
-[ext_resource type="PackedScene" uid="uid://cms2ynhdq4ctc" path="res://scenes/levels/level_11.tscn" id="2_ylwrn"]
-[ext_resource type="PackedScene" uid="uid://bfu7onaf2hnon" path="res://scenes/camera.tscn" id="3_c68rt"]
-[ext_resource type="PackedScene" uid="uid://bj501vgn4f7cd" path="res://scenes/background.tscn" id="4_b7r0f"]
-[ext_resource type="TileSet" uid="uid://c0e54ikcmckmr" path="res://scenes/levels/TileSet.tres" id="5_xex4j"]
-[ext_resource type="PackedScene" uid="uid://deme6ifh760b7" path="res://scenes/player/player.tscn" id="6_rj4iy"]
-[ext_resource type="PackedScene" uid="uid://7xc656hsrc8v" path="res://scenes/collectables/fly.tscn" id="7_0vi5c"]
-[ext_resource type="PackedScene" uid="uid://wsqgg7xhy1pq" path="res://scenes/game_manager.tscn" id="8_5hxyp"]
-[ext_resource type="PackedScene" uid="uid://c2id4jgm7wp0" path="res://scenes/start_nest.tscn" id="9_v80mn"]
-[ext_resource type="PackedScene" uid="uid://b60xvlwfy2gh5" path="res://scenes/damage_objects/spikes_up.tscn" id="10_chcbd"]
-[ext_resource type="PackedScene" uid="uid://xjvkr11q2drg" path="res://scenes/ui/ingame_ui.tscn" id="11_3u6br"]
-[ext_resource type="PackedScene" uid="uid://bec6hialwel1v" path="res://scenes/damage_objects/spikes_left.tscn" id="12_c68rt"]
-[ext_resource type="PackedScene" uid="uid://b75rkvycb3ppc" path="res://scenes/damage_objects/spikes_right.tscn" id="13_b7r0f"]
-[ext_resource type="PackedScene" uid="uid://dtruq84oim05o" path="res://scenes/damage_objects/spikes_down.tscn" id="13_lbaq2"]
-[ext_resource type="PackedScene" uid="uid://v1it1lf3pk5h" path="res://scenes/damage_objects/rotating_spikes_average.tscn" id="13_v1y24"]
+[ext_resource type="Script" uid="uid://csqknlibjuf4p" path="res://scenes/levels/level.gd" id="1_hvxp4"]
+[ext_resource type="PackedScene" uid="uid://c0nel3du06obr" path="res://scenes/levels/level_10.tscn" id="2_c68rt"]
+[ext_resource type="PackedScene" uid="uid://bj501vgn4f7cd" path="res://scenes/background.tscn" id="3_5db3f"]
+[ext_resource type="PackedScene" uid="uid://bfu7onaf2hnon" path="res://scenes/camera.tscn" id="3_p7cwj"]
+[ext_resource type="TileSet" uid="uid://c0e54ikcmckmr" path="res://scenes/levels/TileSet.tres" id="5_gttrq"]
+[ext_resource type="PackedScene" uid="uid://deme6ifh760b7" path="res://scenes/player/player.tscn" id="5_ko8rk"]
+[ext_resource type="PackedScene" uid="uid://7xc656hsrc8v" path="res://scenes/collectables/fly.tscn" id="6_gttrq"]
+[ext_resource type="PackedScene" uid="uid://wsqgg7xhy1pq" path="res://scenes/game_manager.tscn" id="7_n3gcc"]
+[ext_resource type="PackedScene" uid="uid://c2id4jgm7wp0" path="res://scenes/start_nest.tscn" id="8_c7e1w"]
+[ext_resource type="PackedScene" uid="uid://b60xvlwfy2gh5" path="res://scenes/damage_objects/spikes_up.tscn" id="10_hl75t"]
+[ext_resource type="PackedScene" uid="uid://dtruq84oim05o" path="res://scenes/damage_objects/spikes_down.tscn" id="10_n3gcc"]
+[ext_resource type="PackedScene" uid="uid://xjvkr11q2drg" path="res://scenes/ui/ingame_ui.tscn" id="11_omffp"]
+[ext_resource type="PackedScene" uid="uid://bec6hialwel1v" path="res://scenes/damage_objects/spikes_left.tscn" id="12_c7e1w"]
+[ext_resource type="PackedScene" uid="uid://b75rkvycb3ppc" path="res://scenes/damage_objects/spikes_right.tscn" id="13_ilo0b"]
+[ext_resource type="PackedScene" uid="uid://v1it1lf3pk5h" path="res://scenes/damage_objects/rotating_spikes_average.tscn" id="15_hl75t"]
 
-[node name="Level_8" type="Node2D"]
-script = ExtResource("1_v1y24")
-next_level_instance = ExtResource("2_ylwrn")
+[node name="Level_9" type="Node2D"]
+script = ExtResource("1_hvxp4")
+next_level_instance = ExtResource("2_c68rt")
 
-[node name="Camera" parent="." instance=ExtResource("3_c68rt")]
+[node name="Camera" parent="." instance=ExtResource("3_p7cwj")]
 
-[node name="bg" parent="." instance=ExtResource("4_b7r0f")]
+[node name="bg" parent="." instance=ExtResource("3_5db3f")]
 
 [node name="Tilemap" type="Node2D" parent="."]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Tilemap"]
 tile_map_data = PackedByteArray("AAAOAA0AAAAGAAIAAAAOAAwAAAAGAAIAAAAOAAsAAAAGAAIAAAAOAAoAAAAGAAIAAAAOAAkAAAAGAAIAAAAOAAgAAAAGAAIAAAAOAAcAAAAGAAIAAAAOAAYAAAAGAAIAAAAOAAUAAAAGAAIAAAAOAAQAAAAGAAIAAAAOAAMAAAAGAAIAAAAOAAIAAAAGAAIAAAAOAAEAAAAGAAIAAAANAA0AAAAGAAIAAAANAAwAAAAHAAgAAAANAAsAAAAGAAcAAAANAAoAAAAGAAcAAAANAAkAAAAGAAcAAAANAAgAAAAGAAcAAAANAAcAAAAGAAcAAAANAAYAAAAGAAcAAAANAAUAAAAGAAcAAAANAAQAAAAGAAcAAAANAAMAAAAGAAcAAAANAAIAAAAHAAYAAAANAAEAAAAGAAIAAAAMAA0AAAAGAAIAAAAMAAwAAAAGAAcAAAAMAAsAAAAGAAcAAAAMAAoAAAAGAAcAAAAMAAkAAAAGAAcAAAAMAAgAAAAGAAcAAAAMAAcAAAAGAAcAAAAMAAYAAAAGAAcAAAAMAAUAAAAGAAcAAAAMAAQAAAAGAAcAAAAMAAMAAAAGAAcAAAAMAAIAAAAGAAcAAAAMAAEAAAAGAAIAAAALAA0AAAAGAAIAAAALAAwAAAAGAAcAAAALAAsAAAAGAAcAAAALAAoAAAAGAAcAAAALAAkAAAAGAAcAAAALAAgAAAAGAAcAAAALAAcAAAAGAAcAAAALAAYAAAAGAAcAAAALAAMAAAAGAAcAAAALAAIAAAAGAAcAAAALAAEAAAAGAAIAAAAKAA0AAAAGAAIAAAAKAAwAAAAGAAcAAAAKAAsAAAAGAAcAAAAKAAoAAAAGAAcAAAAKAAkAAAAGAAcAAAAKAAcAAAAGAAcAAAAKAAYAAAAGAAcAAAAKAAUAAAAGAAcAAAAKAAQAAAAGAAcAAAAKAAMAAAAGAAcAAAAKAAIAAAAGAAcAAAAKAAEAAAAGAAIAAAAJAAcAAAAGAAcAAAAJAAYAAAAGAAcAAAAJAAUAAAAGAAcAAAAJAAQAAAAGAAcAAAAJAAMAAAAGAAcAAAAJAAIAAAAGAAcAAAAJAAEAAAAGAAIAAAAIAAkAAAAGAAcAAAAIAAcAAAAJAAMAAAAIAAYAAAAGAAcAAAAIAAUAAAAGAAcAAAAIAAQAAAAGAAcAAAAIAAMAAAAGAAcAAAAIAAIAAAAGAAcAAAAIAAEAAAAGAAIAAAAHAAcAAAAGAAcAAAAHAAYAAAAGAAcAAAAHAAUAAAAGAAcAAAAHAAQAAAAGAAcAAAAHAAMAAAAGAAcAAAAHAAIAAAAGAAcAAAAHAAEAAAAGAAIAAAAGAAcAAAAGAAcAAAAGAAYAAAAGAAcAAAAGAAUAAAAGAAcAAAAGAAQAAAAGAAcAAAAGAAMAAAAGAAcAAAAGAAIAAAAGAAcAAAAGAAEAAAAGAAIAAAAFAA0AAAAGAAIAAAAFAAwAAAAGAAcAAAAFAAsAAAAGAAcAAAAFAAoAAAAGAAcAAAAFAAcAAAAGAAcAAAAFAAYAAAAGAAcAAAAFAAUAAAAGAAcAAAAFAAQAAAAGAAcAAAAFAAMAAAAGAAcAAAAFAAIAAAAGAAcAAAAFAAEAAAAGAAIAAAAEAA0AAAAGAAIAAAAEAAwAAAAGAAcAAAAEAAsAAAAGAAcAAAAEAAoAAAAGAAcAAAAEAAkAAAAGAAcAAAAEAAcAAAAGAAcAAAAEAAYAAAAGAAcAAAAEAAUAAAAGAAcAAAAEAAQAAAAGAAcAAAAEAAMAAAAGAAcAAAAEAAIAAAAGAAcAAAAEAAEAAAAGAAIAAAADAA0AAAAGAAIAAAADAAwAAAAFAAgAAAADAAsAAAAGAAcAAAADAAoAAAAGAAcAAAADAAgAAAAGAAcAAAADAAcAAAAGAAcAAAADAAYAAAAGAAcAAAADAAUAAAAGAAcAAAADAAQAAAAGAAcAAAADAAMAAAAGAAcAAAADAAIAAAAFAAYAAAADAAEAAAAGAAIAAAACAA0AAAAGAAIAAAACAAwAAAAGAAIAAAACAAsAAAAGAAIAAAACAAoAAAAGAAIAAAACAAkAAAAHAAEAAAACAAgAAAAGAAcAAAACAAcAAAAGAAcAAAACAAYAAAAGAAcAAAACAAUAAAAHAAMAAAACAAQAAAAGAAIAAAACAAMAAAAGAAIAAAACAAIAAAAGAAIAAAACAAEAAAAGAAIAAAABAA0AAAAGAAIAAAABAAwAAAAGAAEAAAABAAsAAAAGAAEAAAABAAoAAAAGAAEAAAABAAkAAAAGAAEAAAABAAgAAAAFAAgAAAABAAcAAAAGAAcAAAABAAUAAAAGAAIAAAABAAQAAAAGAAIAAAABAAMAAAAGAAIAAAABAAIAAAAGAAIAAAABAAEAAAAGAAIAAAAJAA0AAAAGAAIAAAAJAAwAAAAGAAcAAAAJAAsAAAAGAAcAAAAJAAoAAAAGAAcAAAAIAA0AAAAGAAIAAAAIAAwAAAAGAAcAAAAIAAsAAAAGAAcAAAAIAAoAAAAGAAcAAAAHAA0AAAAGAAIAAAAHAAwAAAAGAAcAAAAHAAsAAAAGAAcAAAAHAAoAAAAGAAcAAAAGAA0AAAAGAAIAAAAGAAwAAAAGAAcAAAAGAAsAAAAGAAcAAAAGAAoAAAAGAAcAAAAEAAgAAAAGAAcAAAADAAkAAAAGAAcAAAAFAAgAAAAGAAcAAAAJAAkAAAAGAAcAAAAHAAkAAAAGAAcAAAAGAAkAAAAGAAcAAAAFAAkAAAAGAAcAAAAKAAgAAAAGAAcAAAAJAAgAAAAGAAcAAAAIAAgAAAAGAAcAAAAHAAgAAAAGAAcAAAAGAAgAAAAGAAcAAAALAAQAAAAGAAcAAAALAAUAAAAGAAcAAAD/////AgAGAAIAAAD//wAAAgAGAAIAAAD//wEAAgAGAAIAAAD//wIAAgAGAAIAAAD//wMAAgAGAAIAAAD//wQAAgAGAAIAAAD//wUAAgAGAAIAAAD//wYAAgAGAAIAAAD//wcAAgAGAAIAAAD//wgAAgAGAAIAAAD//wkAAgAGAAIAAAD//woAAgAGAAIAAAD//wsAAgAGAAIAAAD//wwAAgAGAAIAAAD//w0AAgAGAAIAAAD//w4AAgAGAAIAAAD//w8AAgAGAAIAAAAAAA8AAgAGAAIAAAABAA8AAgAGAAIAAAACAA8AAgAGAAIAAAADAA8AAgAGAAIAAAAEAA8AAgAGAAIAAAAFAA8AAgAGAAIAAAAGAA8AAgAGAAIAAAAHAA8AAgAGAAIAAAAIAA8AAgAGAAIAAAAJAA8AAgAGAAIAAAAKAA8AAgAGAAIAAAALAA8AAgAGAAIAAAAMAA8AAgAGAAIAAAANAA8AAgAGAAIAAAAOAA8AAgAGAAIAAAAPAA8AAgAGAAIAAAAQAA8AAgAGAAIAAAAQAA4AAgAGAAIAAAAQAA0AAgAGAAIAAAAQAAwAAgAGAAIAAAAQAAsAAgAGAAIAAAAQAAoAAgAGAAIAAAAQAAkAAgAGAAIAAAAQAAgAAgAGAAIAAAAQAAcAAgAGAAIAAAAQAAYAAgAGAAIAAAAQAAUAAgAGAAIAAAAQAAQAAgAGAAIAAAAQAAMAAgAGAAIAAAAQAAIAAgAGAAIAAAAQAAEAAgAGAAIAAAAQAAAAAgAGAAIAAAAQAP//AgAGAAIAAAAPAP//AgAGAAIAAAAOAP//AgAGAAIAAAANAP//AgAGAAIAAAAMAP//AgAGAAIAAAALAP//AgAGAAIAAAAKAP//AgAGAAIAAAAJAP//AgAGAAIAAAAIAP//AgAGAAIAAAAHAP//AgAGAAIAAAAGAP//AgAGAAIAAAAFAP//AgAGAAIAAAAEAP//AgAGAAIAAAADAP//AgAGAAIAAAACAP//AgAGAAIAAAABAP//AgAGAAIAAAAAAP//AgAGAAIAAAABAAYAAAAFAAYAAAA=")
-tile_set = ExtResource("5_xex4j")
+tile_set = ExtResource("5_gttrq")
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("6_rj4iy")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("5_ko8rk")]
 position = Vector2(32, 128)
 speed = 70
 rotation_speed = 40
 
-[node name="fly" parent="." instance=ExtResource("7_0vi5c")]
+[node name="fly" parent="." instance=ExtResource("6_gttrq")]
 position = Vector2(192, 64)
 
-[node name="fly2" parent="." instance=ExtResource("7_0vi5c")]
+[node name="fly2" parent="." instance=ExtResource("6_gttrq")]
 position = Vector2(80, 64)
 
-[node name="fly3" parent="." instance=ExtResource("7_0vi5c")]
+[node name="fly3" parent="." instance=ExtResource("6_gttrq")]
 position = Vector2(80, 176)
 
-[node name="fly5" parent="." instance=ExtResource("7_0vi5c")]
+[node name="fly5" parent="." instance=ExtResource("6_gttrq")]
 position = Vector2(192, 176)
 
 [node name="StartPoint" type="Node2D" parent="."]
 position = Vector2(32, 128)
 
-[node name="GameManager" parent="." instance=ExtResource("8_5hxyp")]
+[node name="GameManager" parent="." instance=ExtResource("7_n3gcc")]
 
-[node name="StartNest" parent="." instance=ExtResource("9_v80mn")]
+[node name="StartNest" parent="." instance=ExtResource("8_c7e1w")]
 position = Vector2(32, 144)
 
 [node name="Spikes" type="Node" parent="."]
 
-[node name="SpikesDown3" parent="Spikes" instance=ExtResource("13_lbaq2")]
+[node name="SpikesDown3" parent="Spikes" instance=ExtResource("10_n3gcc")]
 position = Vector2(59, 32)
 
-[node name="SpikesDown4" parent="Spikes" instance=ExtResource("13_lbaq2")]
+[node name="SpikesDown4" parent="Spikes" instance=ExtResource("10_n3gcc")]
 position = Vector2(70, 32)
 
-[node name="SpikesDown5" parent="Spikes" instance=ExtResource("13_lbaq2")]
+[node name="SpikesDown5" parent="Spikes" instance=ExtResource("10_n3gcc")]
 position = Vector2(81, 32)
 
-[node name="SpikesDown6" parent="Spikes" instance=ExtResource("13_lbaq2")]
+[node name="SpikesDown6" parent="Spikes" instance=ExtResource("10_n3gcc")]
 position = Vector2(92, 32)
 
-[node name="SpikesDown7" parent="Spikes" instance=ExtResource("13_lbaq2")]
+[node name="SpikesDown7" parent="Spikes" instance=ExtResource("10_n3gcc")]
 position = Vector2(103, 32)
 
-[node name="SpikesDown8" parent="Spikes" instance=ExtResource("13_lbaq2")]
+[node name="SpikesDown8" parent="Spikes" instance=ExtResource("10_n3gcc")]
 position = Vector2(114, 32)
 
-[node name="SpikesDown9" parent="Spikes" instance=ExtResource("13_lbaq2")]
+[node name="SpikesDown9" parent="Spikes" instance=ExtResource("10_n3gcc")]
 position = Vector2(125, 32)
 
-[node name="SpikesDown10" parent="Spikes" instance=ExtResource("13_lbaq2")]
+[node name="SpikesDown10" parent="Spikes" instance=ExtResource("10_n3gcc")]
 position = Vector2(136, 32)
 
-[node name="SpikesDown11" parent="Spikes" instance=ExtResource("13_lbaq2")]
+[node name="SpikesDown11" parent="Spikes" instance=ExtResource("10_n3gcc")]
 position = Vector2(147, 32)
 
-[node name="SpikesDown12" parent="Spikes" instance=ExtResource("13_lbaq2")]
+[node name="SpikesDown12" parent="Spikes" instance=ExtResource("10_n3gcc")]
 position = Vector2(158, 32)
 
-[node name="SpikesDown13" parent="Spikes" instance=ExtResource("13_lbaq2")]
+[node name="SpikesDown13" parent="Spikes" instance=ExtResource("10_n3gcc")]
 position = Vector2(169, 32)
 
-[node name="SpikesDown14" parent="Spikes" instance=ExtResource("13_lbaq2")]
+[node name="SpikesDown14" parent="Spikes" instance=ExtResource("10_n3gcc")]
 position = Vector2(180, 32)
 
-[node name="SpikesDown15" parent="Spikes" instance=ExtResource("13_lbaq2")]
+[node name="SpikesDown15" parent="Spikes" instance=ExtResource("10_n3gcc")]
 position = Vector2(191, 32)
 
-[node name="SpikesDown16" parent="Spikes" instance=ExtResource("13_lbaq2")]
+[node name="SpikesDown16" parent="Spikes" instance=ExtResource("10_n3gcc")]
 position = Vector2(202, 32)
 
-[node name="SpikesDown17" parent="Spikes" instance=ExtResource("13_lbaq2")]
+[node name="SpikesDown17" parent="Spikes" instance=ExtResource("10_n3gcc")]
 position = Vector2(213, 32)
 
-[node name="SpikesDown18" parent="Spikes" instance=ExtResource("13_lbaq2")]
+[node name="SpikesDown18" parent="Spikes" instance=ExtResource("10_n3gcc")]
 position = Vector2(136, 128)
 
-[node name="SpikesUp7" parent="Spikes" instance=ExtResource("10_chcbd")]
+[node name="SpikesUp7" parent="Spikes" instance=ExtResource("10_hl75t")]
 position = Vector2(59, 208)
 
-[node name="SpikesUp8" parent="Spikes" instance=ExtResource("10_chcbd")]
+[node name="SpikesUp8" parent="Spikes" instance=ExtResource("10_hl75t")]
 position = Vector2(81, 208)
 
-[node name="SpikesUp9" parent="Spikes" instance=ExtResource("10_chcbd")]
+[node name="SpikesUp9" parent="Spikes" instance=ExtResource("10_hl75t")]
 position = Vector2(103, 208)
 
-[node name="SpikesUp10" parent="Spikes" instance=ExtResource("10_chcbd")]
+[node name="SpikesUp10" parent="Spikes" instance=ExtResource("10_hl75t")]
 position = Vector2(136, 112)
 
-[node name="SpikesUp11" parent="Spikes" instance=ExtResource("10_chcbd")]
+[node name="SpikesUp11" parent="Spikes" instance=ExtResource("10_hl75t")]
 position = Vector2(70, 208)
 
-[node name="SpikesUp13" parent="Spikes" instance=ExtResource("10_chcbd")]
+[node name="SpikesUp13" parent="Spikes" instance=ExtResource("10_hl75t")]
 position = Vector2(92, 208)
 
-[node name="SpikesUp12" parent="Spikes" instance=ExtResource("10_chcbd")]
+[node name="SpikesUp12" parent="Spikes" instance=ExtResource("10_hl75t")]
 position = Vector2(114, 208)
 
-[node name="SpikesUp14" parent="Spikes" instance=ExtResource("10_chcbd")]
+[node name="SpikesUp14" parent="Spikes" instance=ExtResource("10_hl75t")]
 position = Vector2(136, 208)
 
-[node name="SpikesUp15" parent="Spikes" instance=ExtResource("10_chcbd")]
+[node name="SpikesUp15" parent="Spikes" instance=ExtResource("10_hl75t")]
 position = Vector2(158, 208)
 
-[node name="SpikesUp17" parent="Spikes" instance=ExtResource("10_chcbd")]
+[node name="SpikesUp17" parent="Spikes" instance=ExtResource("10_hl75t")]
 position = Vector2(125, 208)
 
-[node name="SpikesUp18" parent="Spikes" instance=ExtResource("10_chcbd")]
+[node name="SpikesUp18" parent="Spikes" instance=ExtResource("10_hl75t")]
 position = Vector2(147, 208)
 
-[node name="SpikesUp19" parent="Spikes" instance=ExtResource("10_chcbd")]
+[node name="SpikesUp19" parent="Spikes" instance=ExtResource("10_hl75t")]
 position = Vector2(169, 208)
 
-[node name="SpikesUp20" parent="Spikes" instance=ExtResource("10_chcbd")]
+[node name="SpikesUp20" parent="Spikes" instance=ExtResource("10_hl75t")]
 position = Vector2(191, 208)
 
-[node name="SpikesUp21" parent="Spikes" instance=ExtResource("10_chcbd")]
+[node name="SpikesUp21" parent="Spikes" instance=ExtResource("10_hl75t")]
 position = Vector2(213, 208)
 
-[node name="SpikesUp23" parent="Spikes" instance=ExtResource("10_chcbd")]
+[node name="SpikesUp23" parent="Spikes" instance=ExtResource("10_hl75t")]
 position = Vector2(180, 208)
 
-[node name="SpikesUp24" parent="Spikes" instance=ExtResource("10_chcbd")]
+[node name="SpikesUp24" parent="Spikes" instance=ExtResource("10_hl75t")]
 position = Vector2(202, 208)
 
-[node name="SpikesLeft" parent="Spikes" instance=ExtResource("12_c68rt")]
+[node name="SpikesLeft" parent="Spikes" instance=ExtResource("12_c7e1w")]
 position = Vector2(128, 120)
 
-[node name="SpikesRight" parent="Spikes" instance=ExtResource("13_b7r0f")]
+[node name="SpikesRight" parent="Spikes" instance=ExtResource("13_ilo0b")]
 position = Vector2(144, 120)
 
-[node name="IngameUI" parent="." instance=ExtResource("11_3u6br")]
+[node name="IngameUI" parent="." instance=ExtResource("11_omffp")]
 
-[node name="RotatingSpikesAverage" parent="." instance=ExtResource("13_v1y24")]
-position = Vector2(136, 72)
-rotation_speed = 160.0
+[node name="RotatingSpikesAverage" parent="." instance=ExtResource("15_hl75t")]
+position = Vector2(136, 75)
+rotation_speed = 140.0
 not_move = true
 
-[node name="RotatingSpikesAverage2" parent="." instance=ExtResource("13_v1y24")]
-position = Vector2(136, 168)
-rotation_speed = 160.0
+[node name="RotatingSpikesAverage2" parent="." instance=ExtResource("15_hl75t")]
+position = Vector2(136, 165)
+rotation_speed = -140.0
 not_move = true
 
-[node name="RotatingSpikesAverage3" parent="." instance=ExtResource("13_v1y24")]
-position = Vector2(184, 120)
+[node name="RotatingSpikesAverage3" parent="." instance=ExtResource("15_hl75t")]
+position = Vector2(181, 120)
 rotation = -1.5708
-rotation_speed = 160.0
+rotation_speed = 140.0
 not_move = true
 
-[node name="RotatingSpikesAverage4" parent="." instance=ExtResource("13_v1y24")]
-position = Vector2(88, 120)
+[node name="RotatingSpikesAverage4" parent="." instance=ExtResource("15_hl75t")]
+position = Vector2(91, 120)
 rotation = -1.5708
-rotation_speed = 160.0
+rotation_speed = 140.0
 not_move = true

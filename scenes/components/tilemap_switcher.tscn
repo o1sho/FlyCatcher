@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1hw7r4u8f3u4"]
+
+[ext_resource type="Script" uid="uid://c36xbcrp1qstt" path="res://scenes/components/tilemap_switcher.gd" id="1_gpydl"]
+
+[node name="TileMapSwitcher" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_gpydl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

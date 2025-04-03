@@ -17,8 +17,6 @@ radius = 8.0
 [node name="MovingSpikes" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_n4748")
-speed = 50.0
-rotation_speed = 380.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vsld3")

@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://c08600jfkc3qq"]
+
+[ext_resource type="Script" uid="uid://bpxw23tivkgho" path="res://scenes/environments/key.gd" id="1_yrdo3"]
+[ext_resource type="Texture2D" uid="uid://nuveqeaqimyc" path="res://assets/key_gate.png" id="2_yrdo3"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kcrgv"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 7.0
+spread = 180.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 9.8, 0)
+color = Color(0, 0, 0, 0.156863)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xlkcs"]
+radius = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4w1q"]
+atlas = ExtResource("2_yrdo3")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqr1d"]
+atlas = ExtResource("2_yrdo3")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrpdi"]
+atlas = ExtResource("2_yrdo3")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7hbb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4w1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqr1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrpdi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Key" type="Area2D" groups=["key"]]
+collision_mask = 2
+script = ExtResource("1_yrdo3")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+lifetime = 0.28
+process_material = SubResource("ParticleProcessMaterial_kcrgv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xlkcs")
+
+[node name="AnimatedSprite2DShadow" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.156863)
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_g7hbb")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0675702
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_g7hbb")
+autoplay = "default"
+frame = 2
+frame_progress = 0.239042
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -12,6 +12,9 @@ var flies_at_level
 
 @onready var start_nest: StartNest = $"../StartNest"
 @onready var player: Player = $"../Player"
+
+@export var is_multilayer_level: bool = false
+
 func _ready() -> void:
 	player.the_player_has_been_revival.connect(_revival_of_flies)
 	
@@ -20,6 +23,7 @@ func _ready() -> void:
 	print ("Мух на уровне: ", flies_for_victory)
 	
 	flies_at_level = get_tree().get_nodes_in_group("fly")
+	
 
 func add_fly() -> void:
 	flies_collected += 1
