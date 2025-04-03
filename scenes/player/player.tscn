@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d1yk7f67bc3nw" path="res://assets/SpriteSet.png" id="2_dovo2"]
 [ext_resource type="Texture2D" uid="uid://bl0728kh45463" path="res://assets/player_move.png" id="3_gmlin"]
 [ext_resource type="Texture2D" uid="uid://cyc6hr3p6vwhf" path="res://assets/idle.png" id="3_lvxji"]
-[ext_resource type="Texture2D" uid="uid://nuveqeaqimyc" path="res://assets/key_gate.png" id="5_p47bc"]
+[ext_resource type="Texture2D" uid="uid://cgbsvdpdhornn" path="res://assets/SpriteSet4.png" id="5_p47bc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gmlin"]
 radius = 4.0
@@ -110,7 +110,7 @@ animations = [{
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ugbui"]
 atlas = ExtResource("5_p47bc")
-region = Rect2(48, 64, 16, 16)
+region = Rect2(160, 128, 16, 16)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 2
@@ -143,5 +143,3 @@ texture = SubResource("AtlasTexture_ugbui")
 visible = false
 position = Vector2(0, 7)
 texture = SubResource("AtlasTexture_ugbui")
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]

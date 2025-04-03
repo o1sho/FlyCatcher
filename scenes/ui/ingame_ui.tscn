@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://xjvkr11q2drg"]
 
 [ext_resource type="Script" uid="uid://qwlftj6gty7k" path="res://scenes/ui/ingame_ui.gd" id="1_sl7ef"]
-[ext_resource type="Shader" uid="uid://bx2nmyymftni5" path="res://shaders/transition.gdshader" id="2_sj4bp"]
+[ext_resource type="Shader" uid="uid://b166qqnydet0j" path="res://scenes/ui/darkness.gdshader" id="2_sl7ef"]
 [ext_resource type="Shader" uid="uid://chf832wdy63wy" path="res://scenes/CRTeffect.gdshader" id="3_m46uy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vfu0f"]
-shader = ExtResource("2_sj4bp")
+shader = ExtResource("2_sl7ef")
 shader_parameter/color = Color(0.0588235, 0.105882, 0.14902, 1)
 shader_parameter/center = Vector2(0.5, 0.5)
 shader_parameter/radius = 1.0

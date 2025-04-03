@@ -4,12 +4,19 @@ extends Node
 @onready var player: Player = $Player
 @onready var transition_mask: IngameUI = $IngameUI
 
+@export var is_darkness: bool = false
+
 var current_level: int
 
 func _ready() -> void:
 	transition_mask.start_transition_increase(player.global_position)
 	
 	current_level = int(get_tree().current_scene.name) + 1
+
+	if is_darkness:
+		pass
+	else: 
+		return
 
 func get_next_level() -> PackedScene:
 	return next_level_instance
