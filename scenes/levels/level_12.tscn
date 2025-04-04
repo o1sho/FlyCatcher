@@ -62,7 +62,7 @@ position = Vector2(32, 104)
 position = Vector2(192, 160)
 point_a = Vector2(192, 160)
 point_b = Vector2(170, 88)
-speed = 110.0
+speed = 90.0
 rotation_speed = 550.0
 
 [node name="MovingSpikes2" parent="." instance=ExtResource("10_igkd2")]

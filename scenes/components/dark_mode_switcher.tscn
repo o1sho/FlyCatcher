@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://mjdx2g6vk3io"]
+
+[ext_resource type="Script" uid="uid://bg0f86usax2eh" path="res://scenes/components/dark_mode_switcher.gd" id="1_pufts"]
+
+[node name="DarkModeSwitcher" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_pufts")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

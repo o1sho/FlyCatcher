@@ -163,22 +163,22 @@ position = Vector2(144, 120)
 
 [node name="RotatingSpikesAverage" parent="." instance=ExtResource("15_hl75t")]
 position = Vector2(136, 75)
-rotation_speed = 140.0
+rotation_speed = 90.0
 not_move = true
 
 [node name="RotatingSpikesAverage2" parent="." instance=ExtResource("15_hl75t")]
 position = Vector2(136, 165)
-rotation_speed = -140.0
+rotation_speed = -90.0
 not_move = true
 
 [node name="RotatingSpikesAverage3" parent="." instance=ExtResource("15_hl75t")]
 position = Vector2(181, 120)
 rotation = -1.5708
-rotation_speed = 140.0
+rotation_speed = 90.0
 not_move = true
 
 [node name="RotatingSpikesAverage4" parent="." instance=ExtResource("15_hl75t")]
 position = Vector2(91, 120)
 rotation = -1.5708
-rotation_speed = 140.0
+rotation_speed = 90.0
 not_move = true

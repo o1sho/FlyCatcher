@@ -37,6 +37,7 @@ speed = 70
 rotation_speed = 40
 
 [node name="Dark" type="Sprite2D" parent="Player"]
+modulate = Color(1, 1, 1, 0.992157)
 z_index = 4
 texture = ExtResource("7_fijux")
 

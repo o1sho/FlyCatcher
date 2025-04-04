@@ -77,11 +77,12 @@ func show_visible_objects() -> void:
 			
 			
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		switch_tilemap_layer()
-		collision_mask = 0
-		camera.start_shake()
-		on_player_entered = true
+	#if body.is_in_group("player"):
+		#collision_mask = 0
+		#switch_tilemap_layer()
+		#camera.start_shake()
+		#on_player_entered = true
+		pass
 
 func _on_all_flies_caught() -> void:
 	collision_mask = 2
@@ -95,3 +96,11 @@ func _on_the_player_has_been_revival() -> void:
 		collision_mask = 2
 		
 	
+
+
+func _on_body_exited(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		collision_mask = 0
+		switch_tilemap_layer()
+		camera.start_shake()
+		on_player_entered = true

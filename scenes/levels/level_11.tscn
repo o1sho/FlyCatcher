@@ -48,7 +48,7 @@ position = Vector2(32, 160)
 position = Vector2(224, 120)
 point_a = Vector2(32, 120)
 point_b = Vector2(224, 120)
-speed = 160.0
+speed = 140.0
 rotation_speed = 800.0
 
 [node name="Spikes" type="Node" parent="."]

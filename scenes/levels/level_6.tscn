@@ -429,6 +429,6 @@ position = Vector2(176, 88)
 point_a = Vector2(88, 176)
 point_b = Vector2(88, 176)
 speed = 0.0
-rotation_speed = 40.0
+rotation_speed = 60.0
 
 [node name="IngameUI" parent="." instance=ExtResource("10_cfbu6")]

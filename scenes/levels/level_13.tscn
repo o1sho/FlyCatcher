@@ -75,6 +75,15 @@ position = Vector2(90, 64)
 [node name="Spikes12" parent="Spikes" instance=ExtResource("8_sww00")]
 position = Vector2(166, 224)
 
+[node name="Spikes11" parent="Spikes" instance=ExtResource("8_sww00")]
+position = Vector2(216, 224)
+
+[node name="Spikes13" parent="Spikes" instance=ExtResource("8_sww00")]
+position = Vector2(203, 224)
+
+[node name="Spikes27" parent="Spikes" instance=ExtResource("8_sww00")]
+position = Vector2(229, 224)
+
 [node name="Spikes14" parent="Spikes" instance=ExtResource("8_sww00")]
 position = Vector2(162, 64)
 
@@ -138,5 +147,5 @@ position = Vector2(192, 40)
 
 [node name="RotatingSpikesSmall" parent="." instance=ExtResource("14_0hwde")]
 position = Vector2(64, 64)
-rotation_speed = -80.0
+rotation_speed = -120.0
 not_move = true

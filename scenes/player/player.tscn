@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://deme6ifh760b7"]
+[gd_scene load_steps=21 format=3 uid="uid://deme6ifh760b7"]
 
 [ext_resource type="Script" uid="uid://qdgmq2elcswc" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Texture2D" uid="uid://d1yk7f67bc3nw" path="res://assets/SpriteSet.png" id="2_dovo2"]
 [ext_resource type="Texture2D" uid="uid://bl0728kh45463" path="res://assets/player_move.png" id="3_gmlin"]
 [ext_resource type="Texture2D" uid="uid://cyc6hr3p6vwhf" path="res://assets/idle.png" id="3_lvxji"]
 [ext_resource type="Texture2D" uid="uid://cgbsvdpdhornn" path="res://assets/SpriteSet4.png" id="5_p47bc"]
+[ext_resource type="Texture2D" uid="uid://nuveqeaqimyc" path="res://assets/key_gate.png" id="6_75vfm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gmlin"]
 radius = 4.0
@@ -72,7 +73,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"fly",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -112,11 +113,17 @@ animations = [{
 atlas = ExtResource("5_p47bc")
 region = Rect2(160, 128, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcs02"]
+atlas = ExtResource("6_75vfm")
+region = Rect2(48, 64, 16, 16)
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 2
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_8afob")
+speed = 50
+fly_velocity = -70.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
 shape = SubResource("CapsuleShape2D_gmlin")
@@ -125,14 +132,18 @@ shape = SubResource("CapsuleShape2D_gmlin")
 modulate = Color(0, 0, 0, 0.196078)
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_5gtgg")
-animation = &"move"
+animation = &"fly"
 autoplay = "idle"
+frame = 2
+frame_progress = 0.0841947
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_5gtgg")
-animation = &"idle_on_floor"
+animation = &"fly"
 autoplay = "idle"
+frame = 1
+frame_progress = 0.530776
 
 [node name="FatFly" type="Sprite2D" parent="."]
 visible = false
@@ -142,4 +153,4 @@ texture = SubResource("AtlasTexture_ugbui")
 [node name="Key" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, 7)
-texture = SubResource("AtlasTexture_ugbui")
+texture = SubResource("AtlasTexture_fcs02")
