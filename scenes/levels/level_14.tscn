@@ -102,22 +102,22 @@ position = Vector2(128, 104)
 position = Vector2(32, 40)
 
 [node name="MovingSpikes" parent="." instance=ExtResource("13_x7cri")]
-position = Vector2(96, 176)
+position = Vector2(91, 176)
 point_a = Vector2(96, 176)
-point_b = Vector2(160, 176)
-speed = 60.0
+point_b = Vector2(163, 176)
+speed = 50.0
 rotation_speed = 480.0
 
 [node name="MovingSpikes2" parent="." instance=ExtResource("13_x7cri")]
-position = Vector2(96, 128)
+position = Vector2(91, 128)
 point_a = Vector2(90, 128)
-point_b = Vector2(160, 128)
-speed = 80.0
+point_b = Vector2(163, 128)
+speed = 70.0
 rotation_speed = 480.0
 
 [node name="MovingSpikes3" parent="." instance=ExtResource("13_x7cri")]
-position = Vector2(96, 80)
-point_a = Vector2(96, 80)
-point_b = Vector2(160, 80)
-speed = 110.0
+position = Vector2(91, 80)
+point_a = Vector2(93, 80)
+point_b = Vector2(163, 80)
+speed = 90.0
 rotation_speed = 480.0

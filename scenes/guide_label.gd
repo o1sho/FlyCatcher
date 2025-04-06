@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 @onready var label_1: Label = $Label
 @onready var label_2: Label = $Label2

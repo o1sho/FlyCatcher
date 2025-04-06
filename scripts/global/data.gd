@@ -3,6 +3,8 @@ extends Node
 var current_unlocked_level: int = 1
 const SAVE_PATH: String = "user://save.cfg"
 
+var current_level: int
+
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("save_reset"):

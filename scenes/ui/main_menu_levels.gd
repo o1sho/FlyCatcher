@@ -6,6 +6,9 @@ var center
 
 @export var level_buttons_container: GridContainer
 
+#var count_of_levels: Array[int] = []
+
+
 func _ready() -> void:
 	Data.load_progress()
 	
@@ -13,46 +16,46 @@ func _ready() -> void:
 	transition_mask.start_transition_increase(center)
 	
 	init_level_button()
-	
-#func _on_play_button():
-	#transition_mask.start_transition_decrease(center)
-	#await transition_mask.tween.finished
-	#get_tree().change_scene_to_file('res://scenes/levels/0_level_start.tscn')
 
 func init_level_button() -> void:
 	for button in level_buttons_container.get_children():
 		# Соеденение сигналов кнопок с функцией запуска уровня
 		if button is Button:
-			var level_num = button.name.to_int()
-			button.pressed.connect(_on_level_button_pressed.bind(level_num))
+			var level_number = button.name.to_int()
+			
+			#count_of_levels.append(level_num)
+
+			button.pressed.connect(_on_level_button_pressed.bind(level_number))
 			print (button.name, " сигнал подключен.")
+			
 			if Data.current_unlocked_level < button.name.to_int():
 				button.disabled = true
 			
+
 func set_scene_center() -> void:
 	var viewport = get_viewport().get_visible_rect()
 	center = viewport.size / 2
 
+	
+#func _on_level_button_pressed(level_number: int):
+	#if level_number <= Data.current_unlocked_level:
+		#var path = "res://scenes/levels/level_%d.tscn" % level_number
+		#print(path)
+		#if ResourceLoader.exists(path):
+			#var button = level_buttons_container.get_children()[level_number - 1]
+			#transition_mask.start_transition_decrease(button.global_position + button.size / 2)
+			#await transition_mask.tween.finished
+			#get_tree().change_scene_to_file(path)
+		#else:
+			#print("Уровень %d не найден!" % level_number)
+
 func _on_level_button_pressed(level_number: int):
 	if level_number <= Data.current_unlocked_level:
-		var path = "res://scenes/levels/level_%d.tscn" % level_number
-		print(path)
-		if ResourceLoader.exists(path):
-			var button = level_buttons_container.get_children()[level_number - 1]
-			#print (button.global_position + button.size / 2)
-			transition_mask.start_transition_decrease(button.global_position + button.size / 2)
-			await transition_mask.tween.finished
-			get_tree().change_scene_to_file(path)
-		else:
-			print("Уровень %d не найден!" % level_number)
+		Data.current_level = level_number
+		var loading_scene = load("res://scenes/ui/loading_scene.tscn")
+		
+		#var button = level_buttons_container.get_children()[level_number - 1]
+		#transition_mask.start_transition_decrease(button.global_position + button.size / 2)
+		#await transition_mask.tween.finished
 			
-
-#func save_progress():
-	#var config = ConfigFile.new()
-	#config.set_value("progress", "unlocked", current_unlocked_level)
-	#config.save(save_path)
-#
-#func load_progress():
-	#var config = ConfigFile.new()
-	#if config.load(save_path) == OK:
-		#current_unlocked_level = config.get_value("progress", "unlocked", 1)
+		get_tree().change_scene_to_packed(loading_scene)

@@ -16,8 +16,8 @@ func _physics_process(delta: float) -> void:
 		_on_play_button()
 	
 func _on_play_button():
-	transition_mask.start_transition_decrease(center)
-	await transition_mask.tween.finished
+	#transition_mask.start_transition_decrease(center)
+	#await transition_mask.tween.finished
 	get_tree().change_scene_to_file('res://scenes/ui/main_menu_levels.tscn')
 
 

@@ -325,7 +325,7 @@ next_level_instance = ExtResource("2_iav0o")
 [node name="Camera" parent="." instance=ExtResource("2_excbq")]
 
 [node name="GuideLabel" parent="." instance=ExtResource("3_dnkej")]
-layer = 1
+z_index = 2
 
 [node name="bg" parent="." instance=ExtResource("4_mm8aj")]
 

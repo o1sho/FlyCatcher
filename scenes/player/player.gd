@@ -54,7 +54,7 @@ func _physics_process(delta: float) -> void:
 			if charge_time < charge_time_max:
 				velocity.y = fly_velocity
 				if fat_fly.visible or key.visible: 
-					velocity.y = fly_velocity / 1.8
+					velocity.y = fly_velocity / 1.7
 		else:
 			charge_time = 0
 		#if Input.is_action_just_pressed("ui_accept"):

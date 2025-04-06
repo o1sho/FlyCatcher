@@ -440,7 +440,7 @@ position = Vector2(176, 120)
 [node name="IngameUI" parent="." instance=ExtResource("10_0jv6w")]
 
 [node name="RotatingSpikesAverage" parent="." instance=ExtResource("10_6tvfy")]
-position = Vector2(121, 118)
+position = Vector2(124, 114)
 rotation_speed = 200.0
 not_move = true
 
@@ -448,7 +448,7 @@ not_move = true
 TileMapLayer_First = NodePath("../Tilemap/TileMapLayer")
 TileMapLayer_Second = NodePath("../Tilemap/TileMapLayer2")
 hidden_objects = [NodePath("../Spikes/HiddenSpikes/Spikes13"), NodePath("../Spikes/HiddenSpikes/Spikes22"), NodePath("../Spikes/HiddenSpikes/Spikes23"), NodePath("../Spikes/HiddenSpikes/Spikes24"), NodePath("../Spikes/HiddenSpikes/Spikes25"), NodePath("../Spikes/HiddenSpikes/Spikes26"), NodePath("../Spikes/HiddenSpikes/Spikes27"), NodePath("../Spikes/HiddenSpikes/Spikes28"), NodePath("../Spikes/HiddenSpikes/Spikes29"), NodePath("../Spikes/HiddenSpikes/Spikes30"), NodePath("../Spikes/HiddenSpikes/Spikes31"), NodePath("../Spikes/HiddenSpikes/Spikes32"), NodePath("../Spikes/HiddenSpikes/Spikes33"), NodePath("../Spikes/HiddenSpikes/Spikes35"), NodePath("../Spikes/HiddenSpikes/Spikes36"), NodePath("../MovingSpikes")]
-visible_objects = [NodePath("../Spikes/Spikes14"), NodePath("../Spikes/Spikes17"), NodePath("../Spikes/Spikes3")]
+visible_objects = [NodePath("../Spikes/Spikes17"), NodePath("../Spikes/Spikes3")]
 trigger_zone_activation_object = NodePath("../FatFly")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapSwitcher"]

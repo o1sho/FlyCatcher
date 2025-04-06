@@ -8,13 +8,17 @@ line_spacing = 6.0
 font = ExtResource("2_nftq6")
 font_color = Color(0.960784, 0.909804, 0.819608, 1)
 
-[node name="GuideLabel" type="CanvasLayer"]
-layer = -1
+[node name="GuideLabel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 240.0
 script = ExtResource("1_nftq6")
 
 [node name="Label" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0.352941)
 z_index = -1
+layout_mode = 0
 offset_left = 28.0
 offset_top = 110.0
 offset_right = 228.0
@@ -28,6 +32,7 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0.352941)
 z_index = -1
+layout_mode = 0
 offset_left = 28.0
 offset_top = 117.0
 offset_right = 228.0

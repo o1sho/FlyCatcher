@@ -48,10 +48,10 @@ position = Vector2(216, 64)
 position = Vector2(152, 56)
 
 [node name="fly4" parent="." instance=ExtResource("7_1p2lu")]
-position = Vector2(136, 152)
+position = Vector2(104, 136)
 
 [node name="fly3" parent="." instance=ExtResource("7_1p2lu")]
-position = Vector2(168, 152)
+position = Vector2(192, 136)
 
 [node name="StartPoint" type="Node2D" parent="."]
 position = Vector2(32, 104)
@@ -61,16 +61,20 @@ position = Vector2(32, 104)
 [node name="MovingSpikes" parent="." instance=ExtResource("10_igkd2")]
 position = Vector2(192, 160)
 point_a = Vector2(192, 160)
-point_b = Vector2(170, 88)
-speed = 90.0
+point_b = Vector2(176, 160)
+point_c_additional = Vector2(176, 32)
+speed = 60.0
 rotation_speed = 550.0
+three_point_mode = true
 
 [node name="MovingSpikes2" parent="." instance=ExtResource("10_igkd2")]
 position = Vector2(80, 160)
 point_a = Vector2(80, 160)
-point_b = Vector2(144, 88)
-speed = 110.0
+point_b = Vector2(128, 160)
+point_c_additional = Vector2(128, 32)
+speed = 70.0
 rotation_speed = -500.0
+three_point_mode = true
 
 [node name="StartNest" parent="." instance=ExtResource("9_1726b")]
 position = Vector2(32, 128)
