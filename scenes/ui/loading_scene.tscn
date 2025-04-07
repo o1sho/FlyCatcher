@@ -42,6 +42,7 @@ size_flags_vertical = 4
 script = ExtResource("1_rs4cm")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(0.54902, 0.54902, 0.54902, 1)
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 240.0

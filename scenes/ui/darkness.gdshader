@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform vec4 color : source_color = vec4(0.06, 0.11, 0.15, 1.0); // #0f1b26
+uniform vec4 color : source_color = vec4(0.08, 0.15, 0.21, 1.0); // #0f1b26
 uniform vec2 center;
 uniform float radius : hint_range(0.0, 1.0) = 0.0; // Начальное значение 0
 uniform vec2 viewport_size = vec2(256.0, 240.0); // Ваш размер экрана

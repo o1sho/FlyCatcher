@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://xjvkr11q2drg"]
+[gd_scene load_steps=7 format=3 uid="uid://xjvkr11q2drg"]
 
 [ext_resource type="Script" uid="uid://qwlftj6gty7k" path="res://scenes/ui/ingame_ui.gd" id="1_sl7ef"]
 [ext_resource type="Shader" uid="uid://b166qqnydet0j" path="res://scenes/ui/darkness.gdshader" id="2_sl7ef"]
@@ -6,7 +6,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vfu0f"]
 shader = ExtResource("2_sl7ef")
-shader_parameter/color = Color(0.0588235, 0.105882, 0.14902, 1)
+shader_parameter/color = Color(0.0313726, 0.0588235, 0.0823529, 1)
 shader_parameter/center = Vector2(0.5, 0.5)
 shader_parameter/radius = 1.0
 shader_parameter/viewport_size = Vector2(256, 240)
@@ -14,11 +14,19 @@ shader_parameter/pixel_scale = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yqqf0"]
 shader = ExtResource("3_m46uy")
-shader_parameter/scanline_intensity = 0.701
-shader_parameter/noise_intensity = 0.549
-shader_parameter/curvature = 0.1
-shader_parameter/vignette_power = 2.072
-shader_parameter/opacity = 0.072
+shader_parameter/scanline_intensity = 0.656
+shader_parameter/noise_intensity = 0.792
+shader_parameter/curvature = 0.056
+shader_parameter/vignette_power = 1.486
+shader_parameter/opacity = 0.027
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sl7ef"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(130, 1, 1)
+gravity = Vector3(0, 98, 0)
+radial_accel_min = -22.12
+radial_accel_max = 22.54
 
 [node name="IngameUI" type="CanvasLayer"]
 layer = 3
@@ -54,3 +62,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(0.960784, 0.909804, 0.819608, 0.32549)
+position = Vector2(128, -3)
+amount = 20
+lifetime = 3.0
+speed_scale = 0.5
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_sl7ef")

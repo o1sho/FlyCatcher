@@ -33,7 +33,7 @@ func start_transition_increase(target_position: Vector2, duration: float = 0.7) 
 	tween = create_tween().set_ease(Tween.EASE_IN_OUT)
 	tween.tween_method(set_radius, 0.0, 1.0, duration)
 	await tween.finished
-	#transition_mask.visible = false
+	transition_mask.visible = false
 
 func set_radius(value: float) -> void:
 	transition_mask.material.set_shader_parameter("radius", value)
