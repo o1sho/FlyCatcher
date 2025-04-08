@@ -28,6 +28,24 @@ func start_shake() -> void:
 	tween.tween_property(self, "offset", initial_offset, shake_duration / 8)
 	tween.finished.connect(_on_shake_finished)
 
+func start_light_shake() -> void:
+	if is_shaking: 
+		return
+	
+	is_shaking = true
+	var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	
+	# Генерация случайной тряски
+	for i in range(8):
+		var rand_offset = Vector2(
+			randf_range(-shake_power/4, shake_power/4),
+			randf_range(-shake_power/4, shake_power/4)
+		)
+		tween.tween_property(self, "offset", rand_offset, shake_duration / 8)
+	
+	tween.tween_property(self, "offset", initial_offset, shake_duration / 8)
+	tween.finished.connect(_on_shake_finished)
+
 
 func _on_shake_finished() -> void:
 	is_shaking = false

@@ -276,6 +276,16 @@ theme = ExtResource("2_wenvr")
 text = "18"
 icon_alignment = 1
 
+[node name="19" type="Button" parent="CenterContainer/LevelsGridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+text = "19"
+icon_alignment = 1
+
 [node name="Fly" type="Area2D" parent="." groups=["fly"]]
 position = Vector2(32, 56)
 collision_mask = 2

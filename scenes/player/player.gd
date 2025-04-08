@@ -57,11 +57,6 @@ func _physics_process(delta: float) -> void:
 					velocity.y = fly_velocity / 1.6
 		else:
 			charge_time = 0
-		#if Input.is_action_just_pressed("ui_accept"):
-			#velocity.y = fly_velocity
-
-		#if Input.is_action_just_pressed("ui_accept") and fat_fly.visible:
-			#velocity.y = fly_velocity / 1.8
 
 		var direction := Input.get_axis("ui_left", "ui_right")
 		if direction:
