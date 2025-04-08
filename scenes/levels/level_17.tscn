@@ -1,0 +1,113 @@
+[gd_scene load_steps=14 format=4 uid="uid://cnc5si1yiohqu"]
+
+[ext_resource type="Script" uid="uid://csqknlibjuf4p" path="res://scenes/levels/level.gd" id="1_2ytym"]
+[ext_resource type="PackedScene" uid="uid://b5u4ln3ut2ltt" path="res://scenes/levels/level_18.tscn" id="2_gf7k6"]
+[ext_resource type="PackedScene" uid="uid://bfu7onaf2hnon" path="res://scenes/camera.tscn" id="3_3p4vh"]
+[ext_resource type="PackedScene" uid="uid://bj501vgn4f7cd" path="res://scenes/background.tscn" id="4_mh6e4"]
+[ext_resource type="TileSet" uid="uid://c0e54ikcmckmr" path="res://scenes/levels/TileSet.tres" id="5_ctdd6"]
+[ext_resource type="PackedScene" uid="uid://deme6ifh760b7" path="res://scenes/player/player.tscn" id="6_7gig0"]
+[ext_resource type="Texture2D" uid="uid://cwr6s85ib4vec" path="res://assets/dark_mask.png" id="7_cebcq"]
+[ext_resource type="PackedScene" uid="uid://wsqgg7xhy1pq" path="res://scenes/game_manager.tscn" id="8_gibxv"]
+[ext_resource type="PackedScene" uid="uid://c2id4jgm7wp0" path="res://scenes/start_nest.tscn" id="9_2ig8n"]
+[ext_resource type="PackedScene" uid="uid://b60xvlwfy2gh5" path="res://scenes/damage_objects/spikes_up.tscn" id="10_6mlu0"]
+[ext_resource type="PackedScene" uid="uid://c0pmds10roe44" path="res://scenes/collectables/fat_fly.tscn" id="11_3sah1"]
+[ext_resource type="PackedScene" uid="uid://xjvkr11q2drg" path="res://scenes/ui/ingame_ui.tscn" id="12_0qkse"]
+[ext_resource type="PackedScene" uid="uid://mh0b8c3tnlwc" path="res://scenes/damage_objects/hammer.tscn" id="15_2ytym"]
+
+[node name="Level_17" type="Node2D"]
+script = ExtResource("1_2ytym")
+next_level_instance = ExtResource("2_gf7k6")
+
+[node name="Camera" parent="." instance=ExtResource("3_3p4vh")]
+
+[node name="bg" parent="." instance=ExtResource("4_mh6e4")]
+
+[node name="Tilemap" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Tilemap"]
+modulate = Color(0.54902, 0.54902, 0.54902, 1)
+tile_map_data = PackedByteArray("AAD/////AgAGAAEAAAD//wAAAgAGAAEAAAD//wEAAgAGAAEAAAD//wIAAgAGAAEAAAD//wMAAgAGAAEAAAD//wQAAgAGAAEAAAD//wUAAgAGAAEAAAD//wYAAgAGAAEAAAD//wcAAgAGAAEAAAD//wgAAgAGAAEAAAD//wkAAgAGAAEAAAD//woAAgAGAAEAAAD//wsAAgAGAAEAAAD//wwAAgAGAAEAAAD//w0AAgAGAAEAAAD//w4AAgAGAAEAAAD//w8AAgAGAAEAAAAAAP//AgAGAAEAAAAAAA8AAgAGAAEAAAABAP//AgAGAAEAAAABAA8AAgAGAAEAAAACAP//AgAGAAEAAAACAA8AAgAGAAEAAAADAP//AgAGAAEAAAADAA8AAgAGAAEAAAAEAP//AgAGAAEAAAAEAA8AAgAGAAEAAAAFAP//AgAGAAEAAAAFAA8AAgAGAAEAAAAGAP//AgAGAAEAAAAGAA8AAgAGAAEAAAAHAP//AgAGAAEAAAAHAA8AAgAGAAEAAAAIAP//AgAGAAEAAAAIAA8AAgAGAAEAAAAJAP//AgAGAAEAAAAJAA8AAgAGAAEAAAAKAP//AgAGAAEAAAAKAA8AAgAGAAEAAAALAP//AgAGAAEAAAALAA8AAgAGAAEAAAAMAP//AgAGAAEAAAAMAA8AAgAGAAEAAAANAP//AgAGAAEAAAANAA8AAgAGAAEAAAAOAP//AgAGAAEAAAAOAA8AAgAGAAEAAAAPAP//AgAGAAEAAAAPAA8AAgAGAAEAAAAQAP//AgAGAAEAAAAQAAAAAgAGAAEAAAAQAAEAAgAGAAEAAAAQAAIAAgAGAAEAAAAQAAMAAgAGAAEAAAAQAAQAAgAGAAEAAAAQAAUAAgAGAAEAAAAQAAYAAgAGAAIAAAAQAAcAAgAGAAEAAAAQAAgAAgAGAAEAAAAQAAkAAgAGAAEAAAAQAAoAAgAGAAEAAAAQAAsAAgAGAAEAAAAQAAwAAgAGAAEAAAAQAA0AAgAGAAEAAAAQAA4AAgAGAAEAAAAQAA8AAgAGAAEAAAABAAEAAAAGAAIAAAABAAIAAAAGAAIAAAABAAMAAAAGAAIAAAABAAQAAAAFAAYAAAABAAUAAAAGAAYAAAABAAYAAAAGAAYAAAABAAcAAAAFAAgAAAABAAgAAAAGAAIAAAABAAkAAAAFAAUAAAABAAoAAAAGAAIAAAABAAsAAAAGAAIAAAABAAwAAAAGAAIAAAABAA0AAAAGAAIAAAACAAEAAAAGAAIAAAACAAIAAAAGAAIAAAACAAMAAAAGAAIAAAACAAQAAAAGAAYAAAACAAUAAAAGAAYAAAACAAYAAAAGAAYAAAACAAcAAAAGAAYAAAACAAgAAAAHAAAAAAACAAkAAAAGAAYAAAACAAoAAAAGAAIAAAACAAsAAAAGAAIAAAACAAwAAAAGAAIAAAACAA0AAAAGAAIAAAADAAEAAAAGAAIAAAADAAIAAAAGAAIAAAADAAMAAAAGAAIAAAADAAQAAAAGAAYAAAADAAUAAAAGAAYAAAADAAYAAAAGAAYAAAADAAcAAAAGAAYAAAADAAgAAAAGAAYAAAADAAkAAAAGAAYAAAADAAoAAAAGAAIAAAADAAsAAAAGAAIAAAADAAwAAAAGAAIAAAADAA0AAAAGAAIAAAAEAAEAAAAGAAIAAAAEAAIAAAAGAAIAAAAEAAMAAAAGAAIAAAAEAAQAAAAGAAYAAAAEAAUAAAAGAAYAAAAEAAYAAAAGAAYAAAAEAAcAAAAGAAYAAAAEAAgAAAAGAAYAAAAEAAkAAAAGAAYAAAAEAAoAAAAGAAIAAAAEAAsAAAAGAAIAAAAEAAwAAAAGAAIAAAAEAA0AAAAGAAIAAAAFAAEAAAAGAAIAAAAFAAIAAAAGAAIAAAAFAAMAAAAGAAIAAAAFAAQAAAAGAAYAAAAFAAUAAAAGAAYAAAAFAAYAAAAGAAYAAAAFAAcAAAAGAAYAAAAFAAgAAAAGAAYAAAAFAAkAAAAGAAYAAAAFAAoAAAAGAAIAAAAFAAsAAAAGAAIAAAAFAAwAAAAGAAIAAAAFAA0AAAAGAAIAAAAGAAEAAAAGAAIAAAAGAAIAAAAGAAIAAAAGAAMAAAAGAAIAAAAGAAQAAAAGAAYAAAAGAAUAAAAGAAYAAAAGAAYAAAAGAAYAAAAGAAcAAAAGAAYAAAAGAAgAAAAGAAYAAAAGAAkAAAAGAAYAAAAGAAoAAAAGAAIAAAAGAAsAAAAGAAIAAAAGAAwAAAAGAAIAAAAGAA0AAAAGAAIAAAAHAAEAAAAGAAIAAAAHAAIAAAAGAAIAAAAHAAMAAAAGAAIAAAAHAAQAAAAGAAYAAAAHAAUAAAAGAAYAAAAHAAYAAAAGAAYAAAAHAAcAAAAGAAYAAAAHAAgAAAAGAAYAAAAHAAkAAAAGAAYAAAAHAAoAAAAGAAIAAAAHAAsAAAAGAAIAAAAHAAwAAAAGAAIAAAAHAA0AAAAGAAIAAAAIAAEAAAAGAAIAAAAIAAIAAAAGAAIAAAAIAAMAAAAGAAIAAAAIAAQAAAAGAAYAAAAIAAUAAAAGAAYAAAAIAAYAAAAGAAYAAAAIAAcAAAAGAAYAAAAIAAgAAAAGAAYAAAAIAAkAAAAGAAYAAAAIAAoAAAAGAAIAAAAIAAsAAAAGAAIAAAAIAAwAAAAGAAIAAAAIAA0AAAAGAAIAAAAJAAEAAAAGAAIAAAAJAAIAAAAGAAIAAAAJAAMAAAAGAAIAAAAJAAQAAAAGAAYAAAAJAAUAAAAGAAYAAAAJAAYAAAAGAAYAAAAJAAcAAAAGAAYAAAAJAAgAAAAGAAYAAAAJAAkAAAAGAAYAAAAJAAoAAAAGAAIAAAAJAAsAAAAGAAIAAAAJAAwAAAAGAAIAAAAJAA0AAAAGAAIAAAAKAAEAAAAGAAIAAAAKAAIAAAAGAAIAAAAKAAMAAAAGAAIAAAAKAAQAAAAGAAYAAAAKAAUAAAAGAAYAAAAKAAYAAAAGAAYAAAAKAAcAAAAGAAYAAAAKAAgAAAAGAAYAAAAKAAkAAAAGAAYAAAAKAAoAAAAGAAIAAAAKAAsAAAAGAAIAAAAKAAwAAAAGAAIAAAAKAA0AAAAGAAIAAAALAAEAAAAGAAIAAAALAAIAAAAGAAIAAAALAAMAAAAGAAIAAAALAAQAAAAGAAYAAAALAAUAAAAGAAYAAAALAAYAAAAGAAYAAAALAAcAAAAGAAYAAAALAAgAAAAGAAYAAAALAAkAAAAGAAYAAAALAAoAAAAGAAIAAAALAAsAAAAGAAIAAAALAAwAAAAGAAIAAAALAA0AAAAGAAIAAAAMAAEAAAAGAAIAAAAMAAIAAAAGAAIAAAAMAAMAAAAGAAIAAAAMAAQAAAAGAAYAAAAMAAUAAAAGAAYAAAAMAAYAAAAGAAYAAAAMAAcAAAAGAAYAAAAMAAgAAAAGAAYAAAAMAAkAAAAGAAYAAAAMAAoAAAAGAAIAAAAMAAsAAAAGAAIAAAAMAAwAAAAGAAIAAAAMAA0AAAAGAAIAAAANAAEAAAAGAAIAAAANAAIAAAAGAAIAAAANAAMAAAAGAAIAAAANAAQAAAAGAAYAAAANAAUAAAAGAAYAAAANAAYAAAAGAAYAAAANAAcAAAAGAAYAAAANAAgAAAAGAAYAAAANAAkAAAAGAAYAAAANAAoAAAAGAAIAAAANAAsAAAAGAAIAAAANAAwAAAAGAAIAAAANAA0AAAAGAAIAAAAOAAEAAAAGAAIAAAAOAAIAAAAGAAIAAAAOAAMAAAAGAAIAAAAOAAQAAAAHAAYAAAAOAAUAAAAGAAYAAAAOAAYAAAAGAAYAAAAOAAcAAAAGAAYAAAAOAAgAAAAGAAYAAAAOAAkAAAAHAAgAAAAOAAoAAAAGAAIAAAAOAAsAAAAGAAIAAAAOAAwAAAAGAAIAAAAOAA0AAAAGAAIAAAA=")
+tile_set = ExtResource("5_ctdd6")
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("6_7gig0")]
+position = Vector2(32, 96)
+speed = 70
+rotation_speed = 40
+
+[node name="Dark" type="Sprite2D" parent="Player"]
+visible = false
+modulate = Color(0.54902, 0.54902, 0.54902, 0.988235)
+z_index = 4
+texture = ExtResource("7_cebcq")
+
+[node name="StartPoint" type="Node2D" parent="."]
+position = Vector2(32, 104)
+
+[node name="GameManager" parent="." instance=ExtResource("8_gibxv")]
+
+[node name="StartNest" parent="." instance=ExtResource("9_2ig8n")]
+position = Vector2(32, 128)
+
+[node name="Spikes" type="Node" parent="."]
+
+[node name="HiddenSpikes" type="Node" parent="Spikes"]
+
+[node name="Spikes15" parent="Spikes/HiddenSpikes" instance=ExtResource("10_6mlu0")]
+position = Vector2(73, 160)
+
+[node name="Spikes26" parent="Spikes/HiddenSpikes" instance=ExtResource("10_6mlu0")]
+position = Vector2(61, 160)
+
+[node name="Spikes30" parent="Spikes/HiddenSpikes" instance=ExtResource("10_6mlu0")]
+position = Vector2(49, 160)
+
+[node name="Spikes31" parent="Spikes/HiddenSpikes" instance=ExtResource("10_6mlu0")]
+position = Vector2(37, 160)
+
+[node name="Spikes32" parent="Spikes/HiddenSpikes" instance=ExtResource("10_6mlu0")]
+position = Vector2(25, 160)
+
+[node name="Spikes33" parent="Spikes/HiddenSpikes" instance=ExtResource("10_6mlu0")]
+position = Vector2(97, 160)
+
+[node name="Spikes35" parent="Spikes/HiddenSpikes" instance=ExtResource("10_6mlu0")]
+position = Vector2(109, 160)
+
+[node name="Spikes36" parent="Spikes/HiddenSpikes" instance=ExtResource("10_6mlu0")]
+position = Vector2(85, 160)
+
+[node name="Spikes14" parent="Spikes/HiddenSpikes" instance=ExtResource("10_6mlu0")]
+position = Vector2(196, 160)
+
+[node name="Spikes34" parent="Spikes/HiddenSpikes" instance=ExtResource("10_6mlu0")]
+position = Vector2(184, 160)
+
+[node name="Spikes37" parent="Spikes/HiddenSpikes" instance=ExtResource("10_6mlu0")]
+position = Vector2(172, 160)
+
+[node name="Spikes38" parent="Spikes/HiddenSpikes" instance=ExtResource("10_6mlu0")]
+position = Vector2(160, 160)
+
+[node name="Spikes39" parent="Spikes/HiddenSpikes" instance=ExtResource("10_6mlu0")]
+position = Vector2(148, 160)
+
+[node name="Spikes40" parent="Spikes/HiddenSpikes" instance=ExtResource("10_6mlu0")]
+position = Vector2(220, 160)
+
+[node name="Spikes41" parent="Spikes/HiddenSpikes" instance=ExtResource("10_6mlu0")]
+position = Vector2(232, 160)
+
+[node name="Spikes42" parent="Spikes/HiddenSpikes" instance=ExtResource("10_6mlu0")]
+position = Vector2(208, 160)
+
+[node name="FatFly" parent="." instance=ExtResource("11_3sah1")]
+position = Vector2(208, 112)
+
+[node name="IngameUI" parent="." instance=ExtResource("12_0qkse")]
+
+[node name="Hammer" parent="." instance=ExtResource("15_2ytym")]
+position = Vector2(128, 160)
+
+[node name="Hammer2" parent="." instance=ExtResource("15_2ytym")]
+position = Vector2(128, 64)
+rotation = 3.14159

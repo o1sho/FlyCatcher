@@ -12,6 +12,7 @@ var next_level: PackedScene
 var next_level_path: String
 
 func _ready() -> void:
+	AudioPlayer.play_music_level()
 	transition_mask.start_transition_increase(player.global_position)
 	
 	current_level = int(get_tree().current_scene.name) + 1

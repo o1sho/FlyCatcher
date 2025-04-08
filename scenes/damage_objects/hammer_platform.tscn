@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://e0thd3inhesb"]
+
+[ext_resource type="Texture2D" uid="uid://4m5syttyusfh" path="res://assets/hammer_platform.png" id="1_d5yur"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5yur"]
+size = Vector2(30, 1)
+
+[node name="HammerPlatform" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(1, 1.16667)
+texture = ExtResource("1_d5yur")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_d5yur")

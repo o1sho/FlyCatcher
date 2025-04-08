@@ -281,3 +281,5 @@ frame = 2
 frame_progress = 0.0882339
 
 [node name="IngameUI" parent="." instance=ExtResource("4_m1kxf")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
