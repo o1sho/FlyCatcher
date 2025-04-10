@@ -29,8 +29,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().call_deferred("change_scene_to_packed", level_menu_instance)
+		AudioPlayer.play_button(-3.0)
 
 func get_next_level() -> PackedScene:
+	AudioPlayer.play_switch_level(5.0)
 	return next_level_instance
 	
 func finish_level():

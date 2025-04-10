@@ -14,5 +14,6 @@ func _on_body_entered(body: Node2D) -> void:
 			animation_gate.play("open")
 			#await animation_gate.animation_finished
 			body.key.visible = false
+			AudioPlayer.play_additional(1.0, global_position)
 		else:
 			return

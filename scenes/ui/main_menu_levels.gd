@@ -10,7 +10,7 @@ var center
 
 
 func _ready() -> void:
-	Data.load_progress()
+	Data.load_all_settings()
 	
 	set_scene_center()
 	transition_mask.start_transition_increase(center)
@@ -51,6 +51,7 @@ func set_scene_center() -> void:
 
 func _on_level_button_pressed(level_number: int):
 	if level_number <= Data.current_unlocked_level:
+		AudioPlayer.play_button(-2.0, global_position)
 		Data.current_level = level_number
 		var loading_scene = load("res://scenes/ui/loading_scene.tscn")
 		

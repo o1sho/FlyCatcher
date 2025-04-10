@@ -2,36 +2,49 @@ extends Node
 
 var current_unlocked_level: int = 1
 const SAVE_PATH: String = "user://save.cfg"
-
 var current_level: int
 
-
-func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("save_reset"):
-		reset_progress()
+var is_sound_enabled: bool = true:
+	set(value):
+		is_sound_enabled = value
+		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), !value)
+		save_all_settings()  # Изменили здесь
 
 func save_progress(new_level: int) -> void:
 	if new_level > current_unlocked_level:
 		current_unlocked_level = new_level
-		var config = ConfigFile.new()
-		config.set_value("progress", "unlocked_level", current_unlocked_level)
-		config.save(SAVE_PATH)
+		save_all_settings()  # Изменили здесь
 		print("Прогресс сохранен: уровень ", current_unlocked_level)
 
-func load_progress() -> void:
+func save_all_settings() -> void:
+	var config = ConfigFile.new()
+	# Загружаем текущие данные перед сохранением
+	var err = config.load(SAVE_PATH)
+	if err != OK:
+		config = ConfigFile.new()
+	
+	# Сохраняем оба типа данных
+	config.set_value("progress", "unlocked_level", current_unlocked_level)
+	config.set_value("audio", "sound_enabled", is_sound_enabled)
+	
+	config.save(SAVE_PATH)
+
+func load_all_settings() -> void:
 	var config = ConfigFile.new()
 	var err = config.load(SAVE_PATH)
 	if err == OK:
 		current_unlocked_level = config.get_value("progress", "unlocked_level", 1)
-		print("Прогресс загружен: уровень ", current_unlocked_level)
+		is_sound_enabled = config.get_value("audio", "sound_enabled", true)
+		print("Данные загружены: уровень ", current_unlocked_level, ", звук ", is_sound_enabled)
 	else:
-		print("Сохранение не найдено, начинаем с первого уровня")
+		print("Сохранение не найдено, установлены значения по умолчанию")
 		current_unlocked_level = 1
+		is_sound_enabled = true
 
 func reset_progress() -> void:
-	var dir = DirAccess.open("user://")
-	if dir.file_exists(SAVE_PATH):
-		dir.remove(SAVE_PATH)
-		
 	current_unlocked_level = 1
+	save_all_settings()  # Сохраняем сброс прогресса
 	print("Весь прогресс сброшен!")
+
+func toggle_sound():
+	is_sound_enabled = !is_sound_enabled

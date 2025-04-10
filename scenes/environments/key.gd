@@ -17,6 +17,7 @@ func _on_body_entered(body: Node2D) -> void:
 func player_caught() -> void:
 	collected.emit()
 	visible = false
+	AudioPlayer.play_catch(0.0, global_position)
 	set_deferred("monitoring", false)
 	
 func player_revival() -> void:

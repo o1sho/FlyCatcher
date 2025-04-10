@@ -102,5 +102,6 @@ func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		collision_mask = 0
 		switch_tilemap_layer()
+		AudioPlayer.play_switch_level(4.0, global_position )
 		camera.start_shake()
 		on_player_entered = true

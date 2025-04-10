@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://yb0bgfpxjcct"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://yb0bgfpxjcct"]
 
 [ext_resource type="FontFile" uid="uid://pb8vo3u07cku" path="res://assets/ui/BlockCraft.otf" id="1_e5dhw"]
 
@@ -17,19 +17,14 @@ texture_margin_right = 2.0
 texture_margin_bottom = 2.0
 modulate_color = Color(1, 1, 1, 0.14902)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7t3l"]
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3dv5o"]
 load_path = "res://.godot/imported/ui_but_lvl.png-8f3a6ce256287a2f33b2699a58a211d2.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xkoeo"]
 atlas = SubResource("CompressedTexture2D_3dv5o")
 region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7t3l"]
-texture = SubResource("AtlasTexture_xkoeo")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5enx2"]
 texture = SubResource("AtlasTexture_xkoeo")
@@ -53,8 +48,15 @@ texture_margin_right = 2.0
 texture_margin_bottom = 2.0
 region_rect = Rect2(0, 0, 16, 16)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e5dhw"]
-texture = SubResource("AtlasTexture_xkoeo")
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e5dhw"]
+load_path = "res://.godot/imported/ui_but_lvl.png-8f3a6ce256287a2f33b2699a58a211d2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4jt2"]
+atlas = SubResource("CompressedTexture2D_e5dhw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_no1gp"]
+texture = SubResource("AtlasTexture_n4jt2")
 texture_margin_left = 2.0
 texture_margin_top = 2.0
 texture_margin_right = 2.0
@@ -86,4 +88,4 @@ Button/styles/disabled = SubResource("StyleBoxTexture_n4jt2")
 Button/styles/focus = SubResource("StyleBoxTexture_y7t3l")
 Button/styles/hover = SubResource("StyleBoxTexture_5enx2")
 Button/styles/normal = SubResource("StyleBoxTexture_766qx")
-Button/styles/pressed = SubResource("StyleBoxTexture_e5dhw")
+Button/styles/pressed = SubResource("StyleBoxTexture_no1gp")

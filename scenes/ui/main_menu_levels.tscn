@@ -1,9 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsp1sfjtfyrj4"]
+[gd_scene load_steps=13 format=3 uid="uid://dsp1sfjtfyrj4"]
 
 [ext_resource type="Script" uid="uid://c8u4doiitcn2n" path="res://scenes/ui/main_menu_levels.gd" id="1_4kg8t"]
 [ext_resource type="Theme" uid="uid://yb0bgfpxjcct" path="res://scenes/ui/main_menu_button.tres" id="2_wenvr"]
 [ext_resource type="Texture2D" uid="uid://qh3rfc1j052s" path="res://assets/fly.png" id="3_fjfk3"]
+[ext_resource type="Script" uid="uid://brsfdc5svkbgu" path="res://scenes/ui/sound.gd" id="3_p2nd5"]
+[ext_resource type="Texture2D" uid="uid://cce0r3csdso2g" path="res://assets/ui/ui_but_sound.png" id="4_65ulk"]
 [ext_resource type="PackedScene" uid="uid://xjvkr11q2drg" path="res://scenes/ui/ingame_ui.tscn" id="4_p2nd5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjfk3"]
+atlas = ExtResource("4_65ulk")
+region = Rect2(0, 0, 32, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jmfr8"]
 radius = 3.16228
@@ -286,6 +292,33 @@ theme = ExtResource("2_wenvr")
 text = "19"
 icon_alignment = 1
 
+[node name="sound" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -39.0
+offset_right = 8.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wenvr")
+icon_alignment = 1
+script = ExtResource("3_p2nd5")
+
+[node name="Sprite2D" type="Sprite2D" parent="sound"]
+texture = SubResource("AtlasTexture_fjfk3")
+centered = false
+hframes = 2
+frame = 1
+
 [node name="Fly" type="Area2D" parent="." groups=["fly"]]
 position = Vector2(32, 56)
 collision_mask = 2
@@ -463,3 +496,5 @@ frame = 2
 frame_progress = 0.0882339
 
 [node name="IngameUI" parent="." instance=ExtResource("4_p2nd5")]
+
+[connection signal="toggled" from="sound" to="sound" method="_on_toggled"]

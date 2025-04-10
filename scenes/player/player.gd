@@ -32,7 +32,13 @@ func _ready() -> void:
 	fat_fly.visible = false
 	key.visible = false
 	
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		AudioPlayer.play_fly_up(-5.0, global_position)
+	
 func _physics_process(delta: float) -> void:
+
+	
 	if block_input_start && !block_input_end:
 		var direction := Input.get_axis("ui_left", "ui_right")
 		if direction:
@@ -78,9 +84,9 @@ func _physics_process(delta: float) -> void:
 		elif is_on_floor() and velocity.x != 0:
 			animated_sprite_2d.play("move")
 			animated_shadow.play("move")
-
+			
 		update_rotation(delta, direction)
-		move_and_slide()
+	move_and_slide()
 		
 func update_rotation(delta, direction: float):
 	var target_rotation = 0.0
@@ -99,6 +105,9 @@ func revival_of_player() -> void:
 	global_position = start_point.global_position
 	velocity = Vector2.ZERO
 	block_input_start = true
+	
+	AudioPlayer.play_death(-5.0, global_position)
+	
 	print ("Все мухи потеряны!")
 	
 	fat_fly.visible = false
